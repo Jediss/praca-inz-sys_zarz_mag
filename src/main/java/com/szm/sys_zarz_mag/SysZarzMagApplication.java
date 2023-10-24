@@ -1,4 +1,4 @@
-package szm4.sys_zarz_mag;
+package com.szm.sys_zarz_mag;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

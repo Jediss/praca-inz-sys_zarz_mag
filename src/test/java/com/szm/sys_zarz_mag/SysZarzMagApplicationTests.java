@@ -1,4 +1,4 @@
-package szm4.sys_zarz_mag;
+package com.szm.sys_zarz_mag;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
