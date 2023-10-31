@@ -121,5 +121,4 @@ public interface MiejsceSkladowaniaRepository extends JpaRepository<MiejsceSklad
     @Query("DELETE FROM MiejsceSkladowania m WHERE m.x = :xCoordinate AND m.y = :yCoordinate AND m.level = :level AND m.hala = true")
     void deleteByXAndYAndLevelAndHala(@Param("xCoordinate") int xCoordinate, @Param("yCoordinate") int yCoordinate, @Param("level") int level);
 
-
 }
