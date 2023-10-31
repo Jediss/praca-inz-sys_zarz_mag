@@ -1,4 +1,4 @@
-package com.szm.sys_zarz_mag.Miejsce_skladowania;
+package com.szm.sys_zarz_mag.MiejsceSkladowania;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -11,25 +11,22 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Miejsce_skladowania {
+public class MiejsceSkladowania {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long ID_miejsce_skladowania;
+    private long IdMiejsceSkladowania;
 
-    @Column
     private boolean hala;
 
-    @Column
     private boolean plac;
 
-    @Column(nullable = false)
+    //@Column(nullable = false)
     private int x;
 
-    @Column(nullable = false)
+    //@Column(nullable = false)
     private int y;
 
-    @Column(nullable = false)
+    //@Column(nullable = false)
     private int level;
-
 }

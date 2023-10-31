@@ -15,8 +15,8 @@ public class Dzial {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ID_dzial;
+    private long IdDzial;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String dzial;
 }

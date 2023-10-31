@@ -1,8 +1,8 @@
 package com.szm.sys_zarz_mag.Towar;
 
 import com.szm.sys_zarz_mag.Jednostka.Jednostka;
-import com.szm.sys_zarz_mag.Miejsce_skladowania.Miejsce_skladowania;
-import com.szm.sys_zarz_mag.Rodzaj_skladowania.Rodzaj_skladowania;
+import com.szm.sys_zarz_mag.MiejsceSkladowania.MiejsceSkladowania;
+import com.szm.sys_zarz_mag.RodzajSkladowania.RodzajSkladowania;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,29 +18,28 @@ public class Towar {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long ID_towar;
+    private long IdTowar;
 
     @ManyToOne
-    @JoinColumn(name = "ID_miejsce_skladowania")
-    private Miejsce_skladowania miejsceSkladowania;
+    @JoinColumn(name = "IdMiejsceSkladowania")
+    private MiejsceSkladowania miejsceSkladowania;
 
     @ManyToOne
-    @JoinColumn(name = "ID_rodzaj_skladowania")
-    private Rodzaj_skladowania rodzajSkladowania;
+    @JoinColumn(name = "IdRodzajSkladowania")
+    private RodzajSkladowania rodzajSkladowania;
 
     @ManyToOne
-    @JoinColumn(name = "ID_jednostka")
+    @JoinColumn(name = "IdJednostka")
     private Jednostka jednostka;
 
     @Column(nullable = false)
-    private String nazwa_towar;
+    private String nazwaTowar;
 
     @Column(nullable = false)
     private double ilosc;
 
     @Column(nullable = false)
-    private String data_przyjecia;
+    private String dataPrzyjecia;
 
-    @Column
-    private String data_wysylki;
+    private String dataWysylki;
 }

@@ -15,17 +15,17 @@ public class Magazyn {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ID_magazyn;
+    private long IdMagazyn;
 
     @Column(nullable = false)
-    private String nazwa_magazyn;
+    private String nazwaMagazyn;
 
     @Column(nullable = false)
-    private String adres_ulica_m;
+    private String adresUlicaM;
 
     @Column(nullable = false)
-    private String adres_kod_m;
+    private String adresKodM;
 
     @Column(nullable = false)
-    private String adres_miasto_m;
+    private String adresMiastoM;
 }

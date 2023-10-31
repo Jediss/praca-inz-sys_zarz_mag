@@ -15,8 +15,8 @@ public class Jednostka {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ID_jednostka;
+    private long IdJednostka;
 
-    @Column
+    @Column(unique = true)
     private String jednostka;
 }

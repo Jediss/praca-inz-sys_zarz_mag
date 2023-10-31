@@ -1,4 +1,4 @@
-package com.szm.sys_zarz_mag.ID_dzial_stan;
+package com.szm.sys_zarz_mag.IdDzialStan;
 
 import com.szm.sys_zarz_mag.Dzial.Dzial;
 import com.szm.sys_zarz_mag.Stanowisko.Stanowisko;
@@ -13,17 +13,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Entity
-public class ID_dzial_stan {
+public class IdDzialStan {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long ID_dzial_stan;
+    private Long IsDzialStan;
 
     @ManyToOne
-    @JoinColumn(name = "ID_stanowisko")
+    @JoinColumn(name = "IdStanowisko")
     private Stanowisko stanowisko;
 
     @ManyToOne
-    @JoinColumn(name = "ID_dzial")
+    @JoinColumn(name = "IdDzial")
     private Dzial dzial;
 }

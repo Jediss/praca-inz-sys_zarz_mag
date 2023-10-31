@@ -15,8 +15,8 @@ public class Stawka {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ID_stawka;
+    private long IdStawka;
 
     @Column(nullable = false)
-    private float wartosc;
+    private double wartosc;
 }

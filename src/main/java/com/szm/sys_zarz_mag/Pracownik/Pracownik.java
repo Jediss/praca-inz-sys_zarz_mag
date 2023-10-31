@@ -1,6 +1,6 @@
 package com.szm.sys_zarz_mag.Pracownik;
 
-import com.szm.sys_zarz_mag.ID_dzial_stan.ID_dzial_stan;
+import com.szm.sys_zarz_mag.IdDzialStan.IdDzialStan;
 import com.szm.sys_zarz_mag.Magazyn.Magazyn;
 import com.szm.sys_zarz_mag.Stawka.Stawka;
 import jakarta.persistence.*;
@@ -18,18 +18,18 @@ public class Pracownik {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long ID_pracownik;
+    private long IdPracownik;
 
     @ManyToOne
-    @JoinColumn(name = "ID_magazyn")
+    @JoinColumn(name = "IdMagazyn")
     private Magazyn magazyn;
 
     @ManyToOne
-    @JoinColumn(name = "ID_dzial_stan")
-    private ID_dzial_stan dzialStan;
+    @JoinColumn(name = "IdDzialStan")
+    private IdDzialStan dzialStan;
 
     @ManyToOne
-    @JoinColumn(name = "ID_stawka")
+    @JoinColumn(name = "IdStawka")
     private Stawka stawka;
 
     @Column(nullable = false)
@@ -39,15 +39,14 @@ public class Pracownik {
     private String nazwisko;
 
     @Column(nullable = false)
-    private String data_zatrud;
+    private String dataZatrud;
 
-    @Column
-    private String data_zwol;
-
-    @Column(nullable = false)
-    private String telefon_p;
+    private String dataZwol;
 
     @Column(nullable = false)
+    private String telefonP;
+
+    @Column(nullable = false, unique = true)
     private String login;
 
     @Column(nullable = false)

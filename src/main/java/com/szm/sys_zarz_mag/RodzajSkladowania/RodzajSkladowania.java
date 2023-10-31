@@ -1,4 +1,4 @@
-package com.szm.sys_zarz_mag.Rodzaj_skladowania;
+package com.szm.sys_zarz_mag.RodzajSkladowania;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -11,12 +11,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Rodzaj_skladowania {
+public class RodzajSkladowania {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ID_rodzaj_skladowania;
+    private long IdRodzajSkladowania;
 
-    @Column(nullable = false)
-    private String rodzaj_skladowania;
+    @Column(nullable = false, unique = true)
+    private String rodzajSkladowania;
 }

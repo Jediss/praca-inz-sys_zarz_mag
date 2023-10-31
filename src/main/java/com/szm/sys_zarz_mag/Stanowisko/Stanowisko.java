@@ -15,8 +15,8 @@ public class Stanowisko {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ID_stanowisko;
+    private long IdStanowisko;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String stanowisko;
 }

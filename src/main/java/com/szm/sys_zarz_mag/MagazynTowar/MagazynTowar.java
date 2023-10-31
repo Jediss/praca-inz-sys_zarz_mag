@@ -1,4 +1,4 @@
-package com.szm.sys_zarz_mag.Magazyn_Towar;
+package com.szm.sys_zarz_mag.MagazynTowar;
 
 import com.szm.sys_zarz_mag.Magazyn.Magazyn;
 import com.szm.sys_zarz_mag.Towar.Towar;
@@ -13,17 +13,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Magazyn_Towar {
+public class MagazynTowar {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long ID_magazyn_towar;
+    private Long IdMagazynTowar;
 
     @ManyToOne
-    @JoinColumn(name = "ID_towar")
+    @JoinColumn(name = "IdTowar")
     private Towar towar;
 
     @ManyToOne
-    @JoinColumn(name = "ID_magazyn")
+    @JoinColumn(name = "IdMagazyn")
     private Magazyn magazyn;
 }
