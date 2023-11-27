@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
+@Table(name = "Stawka")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,7 +16,7 @@ public class Stawka {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long IdStawka;
+    private long idStawka;
 
     @Column(nullable = false)
     private double wartosc;

@@ -8,7 +8,7 @@ import java.util.List;
 @Service
 public class RodzajSkladowaniaService {
 
-    private final RodzajSkladowaniaRepository rodzajSkladowaniaRepository;
+    private RodzajSkladowaniaRepository rodzajSkladowaniaRepository;
 
     @Autowired
     public RodzajSkladowaniaService(RodzajSkladowaniaRepository rodzajSkladowaniaRepository) {

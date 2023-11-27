@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
+@Table(name = "MiejsceSkladowania")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,7 +16,7 @@ public class MiejsceSkladowania {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long IdMiejsceSkladowania;
+    private long idMiejsceSkladowania;
 
     private boolean hala;
 

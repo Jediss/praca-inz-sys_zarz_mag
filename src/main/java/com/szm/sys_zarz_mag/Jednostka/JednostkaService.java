@@ -8,7 +8,7 @@ import java.util.List;
 @Service
 public class JednostkaService {
 
-    private final JednostkaRepository jednostkaRepository;
+    private JednostkaRepository jednostkaRepository;
 
     @Autowired
     public JednostkaService(JednostkaRepository jednostkaRepository) {

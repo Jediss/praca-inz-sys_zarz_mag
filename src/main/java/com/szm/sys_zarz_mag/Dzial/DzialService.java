@@ -8,7 +8,7 @@ import java.util.List;
 @Service
 public class DzialService {
 
-    private final DzialRepository dzialRepository;
+    private DzialRepository dzialRepository;
 
     @Autowired
     public DzialService(DzialRepository dzialRepository) {

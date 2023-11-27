@@ -1,5 +1,6 @@
 package com.szm.sys_zarz_mag.MagazynTowar;
 
+import com.szm.sys_zarz_mag.MagazynTowar.MagazynTowar;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -24,6 +25,6 @@ public interface MagazynTowarRepository extends JpaRepository<MagazynTowar, Long
     MagazynTowar findByTowarIdTowarAndMagazynIdMagazyn(Long idTowar, Long idMagazyn);
 
 
-    @Query("SELECT rt FROM MagazynTowar rt WHERE rt.towar.IdTowar = :towarId AND rt.magazyn.IdMagazyn = :magazynId")
-    MagazynTowar findTowarInMagazyn(@Param("towarId") Long towarId, @Param("magazynId") Long magazynId);
+    //@Query("SELECT rt FROM MagazynTowar rt WHERE rt.towar.IdTowar = :towarId AND rt.magazyn.IdMagazyn = :magazynId")
+    //MagazynTowar findTowarInMagazyn(@Param("towarId") Long towarId, @Param("magazynId") Long magazynId);
 }

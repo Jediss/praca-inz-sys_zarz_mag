@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
+@Table(name = "MagazynTowar")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,13 +18,13 @@ public class MagazynTowar {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long IdMagazynTowar;
+    private Long idMagazynTowar;
 
     @ManyToOne
-    @JoinColumn(name = "IdTowar")
+    @JoinColumn(name = "idTowar")
     private Towar towar;
 
     @ManyToOne
-    @JoinColumn(name = "IdMagazyn")
+    @JoinColumn(name = "idMagazyn")
     private Magazyn magazyn;
 }

@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
+@Table(name = "RodzajSkladowania")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,7 +16,7 @@ public class RodzajSkladowania {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long IdRodzajSkladowania;
+    private long idRodzajSkladowania;
 
     @Column(nullable = false, unique = true)
     private String rodzajSkladowania;

@@ -13,7 +13,7 @@ public interface RodzajSkladowaniaRepository extends JpaRepository<RodzajSkladow
 
 
     //Zapytanie zwracające rodzaj składowania na podstawie identyfikatora rodzaju składowania
-    RodzajSkladowania findByIdRodzajSkladowania(long idRodzaju);
+    RodzajSkladowania findByIdRodzajSkladowania(long idRodzajSkladowania);
 
 
     //Zapytanie usuwające rodzaj składowania na podstawie nazwy

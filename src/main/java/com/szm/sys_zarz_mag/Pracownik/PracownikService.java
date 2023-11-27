@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class PracownikService {
 
-    private final PracownikRepository pracownikRepository;
+    private PracownikRepository pracownikRepository;
 
     @Autowired
     public PracownikService(PracownikRepository pracownikRepository) {

@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public class MiejsceSkladowaniaService {
 
-    private final MiejsceSkladowaniaRepository miejsceSkladowaniaRepository;
+    private MiejsceSkladowaniaRepository miejsceSkladowaniaRepository;
 
     @Autowired
     public MiejsceSkladowaniaService(MiejsceSkladowaniaRepository miejsceSkladowaniaRepository) {

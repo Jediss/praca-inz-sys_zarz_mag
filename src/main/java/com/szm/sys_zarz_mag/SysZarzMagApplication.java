@@ -8,6 +8,6 @@ public class SysZarzMagApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SysZarzMagApplication.class, args);
-	}
 
+	}
 }

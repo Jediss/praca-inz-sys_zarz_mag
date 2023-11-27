@@ -8,7 +8,7 @@ import java.util.List;
 @Service
 public class StawkaService {
 
-    private final StawkaRepository stawkaRepository;
+    private StawkaRepository stawkaRepository;
 
     @Autowired
     public StawkaService(StawkaRepository stawkaRepository) {

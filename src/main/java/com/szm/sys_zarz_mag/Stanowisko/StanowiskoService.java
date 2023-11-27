@@ -6,7 +6,7 @@ import java.util.List;
 @Service
 public class StanowiskoService {
 
-    private final StanowiskoRepository stanowiskoRepository;
+    private StanowiskoRepository stanowiskoRepository;
 
     @Autowired
     public StanowiskoService(StanowiskoRepository stanowiskoRepository) {

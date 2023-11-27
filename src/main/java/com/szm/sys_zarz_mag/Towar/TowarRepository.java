@@ -43,90 +43,90 @@ public interface TowarRepository extends JpaRepository<Towar, Long> {
 
     //Dodanie nazwy towaru
     @Modifying
-    @Query("UPDATE Towar t SET t.nazwaTowar = :nazwa WHERE t.IdTowar = :towarId")
+    @Query("UPDATE Towar t SET t.nazwaTowar = :nazwa WHERE t.idTowar = :towarId")
     void addNazwaTowaru(@Param("towarId") long towarId, @Param("nazwa") String nazwa);
 
 
     //Dodanie ilości towaru
     @Modifying
-    @Query("UPDATE Towar t SET t.ilosc = t.ilosc + :ilosc WHERE t.IdTowar = :towarId")
+    @Query("UPDATE Towar t SET t.ilosc = t.ilosc + :ilosc WHERE t.idTowar = :towarId")
     void addIloscTowaru(@Param("towarId") long towarId, @Param("ilosc") double ilosc);
 
 
     //Dodanie daty przyjęcia towaru
     @Modifying
-    @Query("UPDATE Towar t SET t.dataPrzyjecia = :data WHERE t.IdTowar = :towarId")
+    @Query("UPDATE Towar t SET t.dataPrzyjecia = :data WHERE t.idTowar = :towarId")
     void addDataPrzyjecia(@Param("towarId") long towarId, @Param("data") String data);
 
 
     //Dodanie daty wysyłki towaru
     @Modifying
-    @Query("UPDATE Towar t SET t.dataWysylki = :data WHERE t.IdTowar = :towarId")
+    @Query("UPDATE Towar t SET t.dataWysylki = :data WHERE t.idTowar = :towarId")
     void addDataWysylki(@Param("towarId") long towarId, @Param("data") String data);
 
 
     //Dodanie pełnego miejsca składowania towaru
     @Modifying
-    @Query("UPDATE Towar t SET t.miejsceSkladowania = :miejsceSkladowania WHERE t.IdTowar = :towarId")
+    @Query("UPDATE Towar t SET t.miejsceSkladowania = :miejsceSkladowania WHERE t.idTowar = :towarId")
     void addMiejsceSkladowania(@Param("towarId") long towarId, @Param("miejsceSkladowania") MiejsceSkladowania miejsceSkladowania);
 
 
     //Dodanie rodzaju składowania towaru
     @Modifying
-    @Query("UPDATE Towar t SET t.rodzajSkladowania = :rodzajSkladowania WHERE t.IdTowar = :towarId")
+    @Query("UPDATE Towar t SET t.rodzajSkladowania = :rodzajSkladowania WHERE t.idTowar = :towarId")
     void addRodzajSkladowania(@Param("towarId") long towarId, @Param("rodzajSkladowania") RodzajSkladowania rodzajSkladowania);
 
 
     //Dodanie jednostki towaru
     @Modifying
-    @Query("UPDATE Towar t SET t.jednostka = :jednostka WHERE t.IdTowar = :towarId")
+    @Query("UPDATE Towar t SET t.jednostka = :jednostka WHERE t.idTowar = :towarId")
     void addJednostka(@Param("towarId") long towarId, @Param("jednostka") Jednostka jednostka);
 
 
     //Edycja Miejsca Składowania towaru
     @Modifying
-    @Query("UPDATE Towar t SET t.miejsceSkladowania = :miejsceSkladowania WHERE t.IdTowar = :towarId")
+    @Query("UPDATE Towar t SET t.miejsceSkladowania = :miejsceSkladowania WHERE t.idTowar = :towarId")
     void editMiejsceSkladowania(@Param("towarId") long towarId, @Param("miejsceSkladowania") MiejsceSkladowania miejsceSkladowania);
 
 
     //Edycja Jednostki towaru
     @Modifying
-    @Query("UPDATE Towar t SET t.jednostka = :jednostka WHERE t.IdTowar = :towarId")
+    @Query("UPDATE Towar t SET t.jednostka = :jednostka WHERE t.idTowar = :towarId")
     void editJednostka(@Param("towarId") long towarId, @Param("jednostka") Jednostka jednostka);
 
 
     //Edycja Rodzaju Składowania towaru
     @Modifying
-    @Query("UPDATE Towar t SET t.rodzajSkladowania = :rodzajSkladowania WHERE t.IdTowar = :towarId")
+    @Query("UPDATE Towar t SET t.rodzajSkladowania = :rodzajSkladowania WHERE t.idTowar = :towarId")
     void editRodzajSkladowania(@Param("towarId") long towarId, @Param("rodzajSkladowania") RodzajSkladowania rodzajSkladowania);
 
 
     //Edycja ilości towaru
     @Modifying
-    @Query("UPDATE Towar t SET t.ilosc = :ilosc WHERE t.IdTowar = :towarId")
+    @Query("UPDATE Towar t SET t.ilosc = :ilosc WHERE t.idTowar = :towarId")
     void editIloscTowaru(@Param("towarId") long towarId, @Param("ilosc") double ilosc);
 
 
     //Edycja nazwy towaru
     @Modifying
-    @Query("UPDATE Towar t SET t.nazwaTowar = :nazwa WHERE t.IdTowar = :towarId")
+    @Query("UPDATE Towar t SET t.nazwaTowar = :nazwa WHERE t.idTowar = :towarId")
     void editNazwaTowaru(@Param("towarId") long towarId, @Param("nazwa") String nazwa);
 
 
     //Edycja daty przyjęcia towaru
     @Modifying
-    @Query("UPDATE Towar t SET t.dataPrzyjecia = :data WHERE t.IdTowar = :towarId")
+    @Query("UPDATE Towar t SET t.dataPrzyjecia = :data WHERE t.idTowar = :towarId")
     void editDataPrzyjecia(@Param("towarId") long towarId, @Param("data") String data);
 
 
     //Edycja daty wysyłki towaru
     @Modifying
-    @Query("UPDATE Towar t SET t.dataWysylki = :data WHERE t.IdTowar = :towarId")
+    @Query("UPDATE Towar t SET t.dataWysylki = :data WHERE t.idTowar = :towarId")
     void editDataWysylki(@Param("towarId") long towarId, @Param("data") String data);
 
 
     //Zapytanie usuwające dany towar
     @Modifying
-    @Query("DELETE FROM Towar t WHERE t.IdTowar = :towarId")
+    @Query("DELETE FROM Towar t WHERE t.idTowar = :towarId")
     void deleteTowarById(@Param("towarId") long towarId);
 }

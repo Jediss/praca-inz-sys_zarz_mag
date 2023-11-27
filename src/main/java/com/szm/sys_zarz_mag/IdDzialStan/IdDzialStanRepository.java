@@ -8,16 +8,16 @@ import java.util.List;
 public interface IdDzialStanRepository extends JpaRepository<IdDzialStan, Long> {
 
     // Znajdź unikalne połączenia IdDzial - IdStanowisko
-    List<IdDzialStan> findAllDistinctByIdDzialAndIdStanowisko();
+    //List<IdDzialStan> findAllDistinctByIdDzialAndIdStanowisko();
 
 
     // Znajdź unikalne IdStanowisko powiązane z określonym IdDzial
-    List<IdDzialStan> findDistinctIdStanowiskoByIdDzial(Long IdDzial);
+    //List<IdDzialStan> findDistinctIdStanowiskoByIdDzial(Long idDzial);
 
 
     // Znajdź unikalne IdDzial powiązane z określonym IdStanowisko
-    List<IdDzialStan> findDistinctIdDzialByIdStanowisko(Long IdStanowisko);
-
+    //List<IdDzialStan> findDistinctIdDzialByIdStanowisko(Long idStanowisko);
+    //----------------------------------------------------------------
 
     // Metoda zwracająca listę obiektów IdDzialStan na podstawie stanowiska
     List<IdDzialStan> findByStanowisko(Stanowisko stanowisko);

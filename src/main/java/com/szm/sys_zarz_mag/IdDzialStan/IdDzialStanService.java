@@ -9,14 +9,16 @@ import java.util.List;
 @Service
 public class IdDzialStanService {
 
-    private final IdDzialStanRepository idDzialStanRepository;
+    private IdDzialStanRepository idDzialStanRepository;
 
     @Autowired
     public IdDzialStanService(IdDzialStanRepository idDzialStanRepository) {
         this.idDzialStanRepository = idDzialStanRepository;
     }
 
-    public List<IdDzialStan> findAllDistinctIdDzialStan() {
+
+    //----------------------------------------------------------------
+    /*public List<IdDzialStan> findAllDistinctIdDzialStan() {
         return idDzialStanRepository.findAllDistinctByIdDzialAndIdStanowisko();
     }
 
@@ -26,7 +28,9 @@ public class IdDzialStanService {
 
     public List<IdDzialStan> findDistinctIdDzialByIdStanowisko(Long idStanowisko) {
         return idDzialStanRepository.findDistinctIdDzialByIdStanowisko(idStanowisko);
-    }
+    }*/
+    //-----------------------------------------------------------------
+
 
     public List<IdDzialStan> findIdDzialStanByStanowisko(Stanowisko stanowisko) {
         return idDzialStanRepository.findByStanowisko(stanowisko);

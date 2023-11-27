@@ -7,7 +7,7 @@ import java.util.List;
 @Service
 public class MagazynService {
 
-    private final MagazynRepository magazynRepository;
+    private MagazynRepository magazynRepository;
 
     @Autowired
     public MagazynService(MagazynRepository magazynRepository) {

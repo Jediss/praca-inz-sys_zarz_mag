@@ -13,17 +13,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Entity
+@Table(name = "IdDzialStan")
 public class IdDzialStan {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long IsDzialStan;
+    private Long idDzialStan;
 
     @ManyToOne
-    @JoinColumn(name = "IdStanowisko")
+    @JoinColumn(name = "idStanowisko")
     private Stanowisko stanowisko;
 
     @ManyToOne
-    @JoinColumn(name = "IdDzial")
+    @JoinColumn(name = "idDzial")
     private Dzial dzial;
 }

@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
+@Table(name = "Magazyn")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,7 +16,7 @@ public class Magazyn {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long IdMagazyn;
+    private long idMagazyn;
 
     @Column(nullable = false)
     private String nazwaMagazyn;

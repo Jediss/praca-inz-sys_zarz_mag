@@ -16,7 +16,7 @@ public interface StanowiskoRepository extends JpaRepository<Stanowisko, Long> {
     Stanowisko findByIdStanowisko(long idStanowisko);
 
 
-    //Metoda usuwająca stanowisko na podstawie nazwy
+   //Metoda usuwająca stanowisko na podstawie nazwy
     void deleteByStanowisko(String nazwaStanowiska);
 
 
