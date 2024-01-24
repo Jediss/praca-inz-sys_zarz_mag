@@ -112,7 +112,6 @@ public class MiejsceSkladowaniaService {
     }
 
     //Metody usuwania
-
     private void removeValueFromXCoordinate() {
         miejsceSkladowaniaRepository.removeValueFromX();
     }

@@ -27,4 +27,7 @@ public class IdDzialStan {
     @ManyToOne
     @JoinColumn(name = "idDzial")
     private Dzial dzial;
+
+    public IdDzialStan(Long idDzialStan) {
+    }
 }

@@ -1,0 +1,62 @@
+package com.szm.sys_zarz_mag.Magazyn;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/magazyn")
+public class MagazynController {
+
+    private final MagazynService magazynService;
+
+    @Autowired
+    public MagazynController(MagazynService magazynService) {
+        this.magazynService = magazynService;
+    }
+
+    @GetMapping("/byNazwa/{nazwa}")
+    public Magazyn findMagazynByNazwa(@PathVariable String nazwa) {
+        return magazynService.findMagazynByNazwa(nazwa);
+    }
+
+    @GetMapping("/byAdresMiasto/{adresMiasto}")
+    public List<Magazyn> findMagazynyByAdresMiasto(@PathVariable String adresMiasto) {
+        return magazynService.findMagazynyByAdresMiasto(adresMiasto);
+    }
+    @GetMapping("/byAdresUlica/{adresUlica}")
+    public List<Magazyn> findMagazynyByAdresUlica(@PathVariable String adresUlica) {
+        return magazynService.findMagazynyByAdresUlica(adresUlica);
+    }
+
+    @GetMapping("/byAdresMiastoIUlica/{adresMiasto}/{adresUlica}")
+    public List<Magazyn> findMagazynyByAdresMiastoIUlica(@PathVariable String adresMiasto, @PathVariable String adresUlica) {
+        return magazynService.findMagazynyByAdresMiastoIUlica(adresMiasto, adresUlica);
+    }
+
+    @GetMapping("/byAdresKod/{kodPocztowy}")
+    public List<Magazyn> findMagazynyByAdresKod(@PathVariable String kodPocztowy) {
+        return magazynService.findMagazynyByAdresKod(kodPocztowy);
+    }
+
+    @GetMapping("/byAdresMiastoOrdered/{adresMiasto}")
+    public List<Magazyn> findMagazynyByAdresMiastoOrderedByNazwaAsc(@PathVariable String adresMiasto) {
+        return magazynService.findMagazynyByAdresMiastoOrderedByNazwaAsc(adresMiasto);
+    }
+
+    @GetMapping("/countByNazwa/{nazwa}")
+    public int countMagazynyByNazwa(@PathVariable String nazwa) {
+        return magazynService.countMagazynyByNazwa(nazwa);
+    }
+
+    @DeleteMapping("/deleteByNazwa/{nazwa}")
+    public void deleteMagazynByNazwa(@PathVariable String nazwa) {
+        magazynService.deleteMagazynByNazwa(nazwa);
+    }
+
+    @GetMapping("/customQuery/{miasto}/{ulica}")
+    public List<Magazyn> findMagazynyByMiastoIUlica(@PathVariable String miasto, @PathVariable String ulica) {
+        return magazynService.findMagazynyByMiastoIUlica(miasto, ulica);
+    }
+}
