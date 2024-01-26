@@ -77,7 +77,7 @@ public class MiejsceSkladowaniaController {
         miejsceSkladowaniaService.modifyMiejsceSkladowaniaPlac(newValue);
     }
     /*
-    // Endpoints for removal operations, assuming corresponding service methods are defined and uncommented
+    //
     @DeleteMapping("/removeXCoordinate")
     public void removeValueFromXCoordinate() {
         miejsceSkladowaniaService.removeValueFromXCoordinate();

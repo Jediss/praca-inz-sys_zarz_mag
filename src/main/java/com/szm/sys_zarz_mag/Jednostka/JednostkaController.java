@@ -26,31 +26,31 @@ public class JednostkaController {
         return jednostkaService.findJednostkaById(idJednostka);
     }
 
-    // Delete Jednostka by Nazwa
+
     @DeleteMapping("/deleteByNazwa/{nazwaJednostki}")
     public void deleteJednostkaByNazwa(@PathVariable String nazwaJednostki) {
         jednostkaService.deleteJednostkaByNazwa(nazwaJednostki);
     }
 
-    // Find Jednostki by Fragment Nazwy
+
     @GetMapping("/byFragmentNazwy/{fragmentNazwy}")
     public List<Jednostka> findJednostkiByFragmentNazwy(@PathVariable String fragmentNazwy) {
         return jednostkaService.findJednostkiByFragmentNazwy(fragmentNazwy);
     }
 
-    // Find all Jednostki sorted alphabetically
+
     @GetMapping("/allSorted")
     public List<Jednostka> findAllJednostkiSortedAlphabetically() {
         return jednostkaService.findAllJednostkiSortedAlphabetically();
     }
 
-    // Find existing Jednostki
+
     @GetMapping("/existing")
     public List<Jednostka> findExistingJednostki() {
         return jednostkaService.findExistingJednostki();
     }
 
-    // Count Jednostki by Nazwa
+
     @GetMapping("/countByNazwa/{nazwaJednostki}")
     public int countJednostkiByNazwa(@PathVariable String nazwaJednostki) {
         return jednostkaService.countJednostkiByNazwa(nazwaJednostki);

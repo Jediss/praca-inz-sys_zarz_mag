@@ -46,8 +46,8 @@ public class MagazynService {
         magazynRepository.deleteByNazwaMagazyn(nazwa);
     }
 
-    // Przykładowe zapytanie niestandardowe
+    /*//
     public List<Magazyn> findMagazynyByMiastoIUlica(String miasto, String ulica) {
         return magazynRepository.findMagazynByMiastoIUlica(miasto, ulica);
-    }
+    }*/
 }

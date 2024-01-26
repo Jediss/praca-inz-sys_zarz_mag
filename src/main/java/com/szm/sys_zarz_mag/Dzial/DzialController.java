@@ -26,37 +26,37 @@ public class DzialController {
         return dzialService.findDzialById(id);
     }
 
-    // Find Dzial by id and nazwa
+
     @GetMapping("/byIdAndNazwa/{id}/{nazwa}")
     public Dzial findDzialByIdAndNazwa(@PathVariable long id, @PathVariable String nazwa) {
         return dzialService.findDzialByIdAndNazwa(id, nazwa);
     }
 
-    // Delete Dzial by nazwa
+
     @DeleteMapping("/deleteByNazwa/{nazwa}")
     public void deleteDzialByNazwa(@PathVariable String nazwa) {
         dzialService.deleteDzialByNazwa(nazwa);
     }
 
-    // Find Dzial by partial nazwa
+
     @GetMapping("/byPartialNazwa/{partialNazwa}")
     public List<Dzial> findDzialByPartialNazwa(@PathVariable String partialNazwa) {
         return dzialService.findDzialByPartialNazwa(partialNazwa);
     }
 
-    // Find Dzial by nazwa sorted
+
     @GetMapping("/byNazwaSorted/{nazwa}")
     public List<Dzial> findDzialByNazwaSorted(@PathVariable String nazwa) {
         return dzialService.findDzialByNazwaSorted(nazwa);
     }
 
-    // Find Dzial not null
+
     @GetMapping("/allNotNull")
     public List<Dzial> findDzialNotNull() {
         return dzialService.findDzialNotNull();
     }
 
-    // Count Dzial by nazwa
+
     @GetMapping("/countByNazwa/{nazwa}")
     public int countDzialByNazwa(@PathVariable String nazwa) {
         return dzialService.countDzialByNazwa(nazwa);
