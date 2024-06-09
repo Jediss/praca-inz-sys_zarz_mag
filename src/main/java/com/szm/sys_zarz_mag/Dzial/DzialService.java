@@ -46,4 +46,9 @@ public class DzialService {
     public int countDzialByNazwa(String nazwa) {
         return dzialRepository.countByDzial(nazwa);
     }
+
+
+    public Dzial saveDzial(Dzial dzial) {
+        return dzialRepository.save(dzial);
+    }
 }

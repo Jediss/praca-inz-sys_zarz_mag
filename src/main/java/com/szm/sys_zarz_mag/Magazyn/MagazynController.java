@@ -55,8 +55,8 @@ public class MagazynController {
         magazynService.deleteMagazynByNazwa(nazwa);
     }
 
-    @GetMapping("/customQuery/{miasto}/{ulica}")
-    public List<Magazyn> findMagazynyByMiastoIUlica(@PathVariable String miasto, @PathVariable String ulica) {
-        return magazynService.findMagazynyByMiastoIUlica(miasto, ulica);
-    }
+    //@GetMapping("/customQuery/{miasto}/{ulica}")
+    //public List<Magazyn> findMagazynyByMiastoIUlica(@PathVariable String miasto, @PathVariable String ulica) {
+        //return MagazynService.findMagazynyByMiastoIUlica(miasto, ulica);
+    //}
 }

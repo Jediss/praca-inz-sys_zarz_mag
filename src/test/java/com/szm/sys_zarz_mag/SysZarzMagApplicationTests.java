@@ -10,6 +10,9 @@ import javax.sql.DataSource;
 @SpringBootTest
 class SysZarzMagApplicationTests {
 
+	@Test
+	void contextLoad(){}
+
 	@Component
 	public class DatabaseConnectionTest implements CommandLineRunner {
 

@@ -38,4 +38,5 @@ public interface DzialRepository extends JpaRepository<Dzial, Long> {
 
     //Zapytanie zwracające liczbę działów na podstawie nazwy
     int countByDzial(String dzialName);
+
 }

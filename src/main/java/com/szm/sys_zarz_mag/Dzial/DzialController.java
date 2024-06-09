@@ -16,6 +16,11 @@ public class DzialController {
         this.dzialService = dzialService;
     }
 
+    @PostMapping("/saveDzial")
+    public Dzial saveDzial(@RequestBody Dzial dzial) {
+        return dzialService.saveDzial(dzial);
+    }
+
     @GetMapping("/byNazwa/{nazwa}")
     public Dzial findDzialByNazwa(@PathVariable String nazwa) {
         return dzialService.findDzialByNazwa(nazwa);

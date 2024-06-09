@@ -46,8 +46,8 @@ public class MagazynService {
         magazynRepository.deleteByNazwaMagazyn(nazwa);
     }
 
-    /*//
-    public List<Magazyn> findMagazynyByMiastoIUlica(String miasto, String ulica) {
-        return magazynRepository.findMagazynByMiastoIUlica(miasto, ulica);
-    }*/
+    //
+    //public List<Magazyn> findMagazynyByMiastoIUlica(String miasto, String ulica) {
+        //return magazynRepository.findMagazynByMiastoIUlica(miasto, ulica);
+    //}
 }
