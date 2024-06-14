@@ -23,17 +23,17 @@ public class ZadanieController {
     }
 
     @GetMapping("/getById/{id}")
-    public Zadanie getZadanieById(@PathVariable Long id) {
+    public Zadanie getZadanieById(@PathVariable("id") Long id) {
         return zadanieService.getZadanieById(id);
     }
 
     @DeleteMapping("/deleteById/{id}")
-    public void deleteZadanieById(@PathVariable Long id) {
+    public void deleteZadanieById(@PathVariable("id") Long id) {
         zadanieService.deleteZadanieById(id);
     }
 
     @DeleteMapping("/deleteByOpis/{opis}")
-    public void deleteZadanieByOpis(@PathVariable String opis) {
+    public void deleteZadanieByOpis(@PathVariable("id") String opis) {
         zadanieService.deleteZadanieByOpis(opis);
     }
 
@@ -43,7 +43,7 @@ public class ZadanieController {
     }
 
     @GetMapping("/getByFragmentOpisu/{fragment}")
-    public List<Zadanie> getZadaniaByFragmentOpisu(@PathVariable String fragment) {
+    public List<Zadanie> getZadaniaByFragmentOpisu(@PathVariable("fragment") String fragment) {
         return zadanieService.getZadaniaByFragmentOpisu(fragment);
     }
 
@@ -53,7 +53,7 @@ public class ZadanieController {
     }
 
     @GetMapping("/getByPracownikId/{id}")
-    public List<Zadanie> getZadaniaByPracownikId(@PathVariable Long id) {
+    public List<Zadanie> getZadaniaByPracownikId(@PathVariable("id") Long id) {
         return zadanieService.getZadaniaByPracownikId(id);
     }
 }

@@ -17,32 +17,32 @@ public class StawkaController {
     }
 
     @GetMapping("/findByWartosc/{wartosc}")
-    public Stawka findStawkaByWartosc(@PathVariable double wartosc) {
+    public Stawka findStawkaByWartosc(@PathVariable("wartosc") double wartosc) {
         return stawkaService.findStawkaByWartosc(wartosc);
     }
 
     @GetMapping("/findById/{id}")
-    public Stawka findStawkaById(@PathVariable long id) {
+    public Stawka findStawkaById(@PathVariable("id") long id) {
         return stawkaService.findStawkaById(id);
     }
 
     @DeleteMapping("/deleteByWartosc/{wartosc}")
-    public void deleteStawkaByWartosc(@PathVariable double wartosc) {
+    public void deleteStawkaByWartosc(@PathVariable("wartosc") double wartosc) {
         stawkaService.deleteStawkaByWartosc(wartosc);
     }
 
     @GetMapping("/findByWartoscGreaterThan/{wartosc}")
-    public List<Stawka> findStawkiByWartoscGreaterThan(@PathVariable double wartosc) {
+    public List<Stawka> findStawkiByWartoscGreaterThan(@PathVariable("wartosc") double wartosc) {
         return stawkaService.findStawkiByWartoscGreaterThan(wartosc);
     }
 
     @GetMapping("/findByWartoscLessThan/{wartosc}")
-    public List<Stawka> findStawkiByWartoscLessThan(@PathVariable double wartosc) {
+    public List<Stawka> findStawkiByWartoscLessThan(@PathVariable("wartosc") double wartosc) {
         return stawkaService.findStawkiByWartoscLessThan(wartosc);
     }
 
     @GetMapping("/findByWartoscBetween/{wartosc1}/{wartosc2}")
-    public List<Stawka> findStawkiByWartoscBetween(@PathVariable double wartosc1, @PathVariable double wartosc2) {
+    public List<Stawka> findStawkiByWartoscBetween(@PathVariable("wartosc1") double wartosc1, @PathVariable("wartosc2") double wartosc2) {
         return stawkaService.findStawkiByWartoscBetween(wartosc1, wartosc2);
     }
 
@@ -52,7 +52,7 @@ public class StawkaController {
     }
 
     @GetMapping("/countByWartosc/{wartosc}")
-    public int countStawkiByWartosc(@PathVariable double wartosc) {
+    public int countStawkiByWartosc(@PathVariable("wartosc") double wartosc) {
         return stawkaService.countStawkiByWartosc(wartosc);
     }
 }

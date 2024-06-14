@@ -17,41 +17,41 @@ public class MagazynController {
     }
 
     @GetMapping("/byNazwa/{nazwa}")
-    public Magazyn findMagazynByNazwa(@PathVariable String nazwa) {
+    public Magazyn findMagazynByNazwa(@PathVariable("nazwa") String nazwa) {
         return magazynService.findMagazynByNazwa(nazwa);
     }
 
     @GetMapping("/byAdresMiasto/{adresMiasto}")
-    public List<Magazyn> findMagazynyByAdresMiasto(@PathVariable String adresMiasto) {
+    public List<Magazyn> findMagazynyByAdresMiasto(@PathVariable("adresMiasto") String adresMiasto) {
         return magazynService.findMagazynyByAdresMiasto(adresMiasto);
     }
     @GetMapping("/byAdresUlica/{adresUlica}")
-    public List<Magazyn> findMagazynyByAdresUlica(@PathVariable String adresUlica) {
+    public List<Magazyn> findMagazynyByAdresUlica(@PathVariable("adresUlica") String adresUlica) {
         return magazynService.findMagazynyByAdresUlica(adresUlica);
     }
 
     @GetMapping("/byAdresMiastoIUlica/{adresMiasto}/{adresUlica}")
-    public List<Magazyn> findMagazynyByAdresMiastoIUlica(@PathVariable String adresMiasto, @PathVariable String adresUlica) {
+    public List<Magazyn> findMagazynyByAdresMiastoIUlica(@PathVariable("adresMiasto") String adresMiasto, @PathVariable("adresUlica") String adresUlica) {
         return magazynService.findMagazynyByAdresMiastoIUlica(adresMiasto, adresUlica);
     }
 
     @GetMapping("/byAdresKod/{kodPocztowy}")
-    public List<Magazyn> findMagazynyByAdresKod(@PathVariable String kodPocztowy) {
+    public List<Magazyn> findMagazynyByAdresKod(@PathVariable("kodPocztowy") String kodPocztowy) {
         return magazynService.findMagazynyByAdresKod(kodPocztowy);
     }
 
     @GetMapping("/byAdresMiastoOrdered/{adresMiasto}")
-    public List<Magazyn> findMagazynyByAdresMiastoOrderedByNazwaAsc(@PathVariable String adresMiasto) {
+    public List<Magazyn> findMagazynyByAdresMiastoOrderedByNazwaAsc(@PathVariable("adresMiasto") String adresMiasto) {
         return magazynService.findMagazynyByAdresMiastoOrderedByNazwaAsc(adresMiasto);
     }
 
     @GetMapping("/countByNazwa/{nazwa}")
-    public int countMagazynyByNazwa(@PathVariable String nazwa) {
+    public int countMagazynyByNazwa(@PathVariable("nazwa") String nazwa) {
         return magazynService.countMagazynyByNazwa(nazwa);
     }
 
     @DeleteMapping("/deleteByNazwa/{nazwa}")
-    public void deleteMagazynByNazwa(@PathVariable String nazwa) {
+    public void deleteMagazynByNazwa(@PathVariable("nazwa") String nazwa) {
         magazynService.deleteMagazynByNazwa(nazwa);
     }
 

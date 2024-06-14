@@ -17,22 +17,22 @@ public class StanowiskoController {
     }
 
     @GetMapping("/findByNazwa/{nazwa}")
-    public Stanowisko findStanowiskoByNazwa(@PathVariable String nazwa) {
+    public Stanowisko findStanowiskoByNazwa(@PathVariable("nazwa") String nazwa) {
         return stanowiskoService.findStanowiskoByNazwa(nazwa);
     }
 
     @GetMapping("/findById/{id}")
-    public Stanowisko findStanowiskoById(@PathVariable long id) {
+    public Stanowisko findStanowiskoById(@PathVariable("id") long id) {
         return stanowiskoService.findStanowiskoById(id);
     }
 
     @DeleteMapping("/deleteByNazwa/{nazwa}")
-    public void deleteStanowiskoByNazwa(@PathVariable String nazwa) {
+    public void deleteStanowiskoByNazwa(@PathVariable("nazwa") String nazwa) {
         stanowiskoService.deleteStanowiskoByNazwa(nazwa);
     }
 
     @GetMapping("/findByFragmentNazwy/{fragment}")
-    public List<Stanowisko> findStanowiskoByFragmentNazwy(@PathVariable String fragment) {
+    public List<Stanowisko> findStanowiskoByFragmentNazwy(@PathVariable("fragment") String fragment) {
         return stanowiskoService.findStanowiskoByFragmentNazwy(fragment);
     }
 
@@ -47,7 +47,7 @@ public class StanowiskoController {
     }
 
     @GetMapping("/countByNazwa/{nazwa}")
-    public int countStanowiskoByNazwa(@PathVariable String nazwa) {
+    public int countStanowiskoByNazwa(@PathVariable("nazwa") String nazwa) {
         return stanowiskoService.countStanowiskoByNazwa(nazwa);
     }
 }

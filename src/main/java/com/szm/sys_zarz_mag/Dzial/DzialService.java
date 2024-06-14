@@ -27,8 +27,8 @@ public class DzialService {
         return dzialRepository.findByIdDzialAndDzial(id, nazwa);
     }
 
-    public void deleteDzialByNazwa(String nazwa) {
-        dzialRepository.deleteByDzial(nazwa);
+    public void deleteDzialByNazwa(String dzial) {
+        dzialRepository.deleteByDzial(dzial);
     }
 
     public List<Dzial> findDzialByPartialNazwa(String partialNazwa) {
@@ -46,7 +46,6 @@ public class DzialService {
     public int countDzialByNazwa(String nazwa) {
         return dzialRepository.countByDzial(nazwa);
     }
-
 
     public Dzial saveDzial(Dzial dzial) {
         return dzialRepository.save(dzial);

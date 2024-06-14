@@ -20,12 +20,12 @@ public class TowarController {
     }
 
     @GetMapping("/znajdzPoNazwie/{nazwaTowar}")
-    public Towar znajdzTowarNaPodstawieNazwy(@PathVariable String nazwaTowar) {
+    public Towar znajdzTowarNaPodstawieNazwy(@PathVariable("nazwaTowar") String nazwaTowar) {
         return towarService.znajdzTowarNaPodstawieNazwy(nazwaTowar);
     }
 
     @GetMapping("/znajdzWiekszeNiz/{ilosc}")
-    public List<Towar> znajdzTowaryZIlosciaWiekszaNiz(@PathVariable double ilosc) {
+    public List<Towar> znajdzTowaryZIlosciaWiekszaNiz(@PathVariable("ilosc") double ilosc) {
         return towarService.znajdzTowaryZIlosciaWiekszaNiz(ilosc);
     }
 
@@ -95,22 +95,22 @@ public class TowarController {
     }
 
     @DeleteMapping("/usun/{towarId}")
-    public void usunTowar(@PathVariable long towarId) {
+    public void usunTowar(@PathVariable("towarId") long towarId) {
         towarService.usunTowar(towarId);
     }
 
     @GetMapping("/znajdzMniejszeNiz/{ilosc}")
-    public List<Towar> znajdzTowaryZIlosciaMniejszaNiz(@PathVariable double ilosc) {
+    public List<Towar> znajdzTowaryZIlosciaMniejszaNiz(@PathVariable("ilosc") double ilosc) {
         return towarService.znajdzTowaryZIlosciaMniejszaNiz(ilosc);
     }
 
     @GetMapping("/znajdzPomiedzy/{ilosc1}/{ilosc2}")
-    public List<Towar> znajdzTowaryZIlosciaPomiedzy(@PathVariable double ilosc1, @PathVariable double ilosc2) {
+    public List<Towar> znajdzTowaryZIlosciaPomiedzy(@PathVariable("ilosc1") double ilosc1, @PathVariable("ilosc2") double ilosc2) {
         return towarService.znajdzTowaryZIlosciaPomiedzy(ilosc1, ilosc2);
     }
 
     @GetMapping("/znajdzPoDacieWysylki/{dataWysylki}")
-    public List<Towar> znajdzTowaryZDataWysylki(@PathVariable String dataWysylki) {
+    public List<Towar> znajdzTowaryZDataWysylki(@PathVariable("dataWysylki") String dataWysylki) {
         return towarService.znajdzTowaryZDataWysylki(dataWysylki);
     }
 
@@ -120,7 +120,7 @@ public class TowarController {
     }
 
     @GetMapping("/policzPoNazwie/{nazwaTowar}")
-    public int policzTowaryZNazwa(@PathVariable String nazwaTowar) {
+    public int policzTowaryZNazwa(@PathVariable("nazwaTowar") String nazwaTowar) {
         return towarService.policzTowaryZNazwa(nazwaTowar);
     }
 

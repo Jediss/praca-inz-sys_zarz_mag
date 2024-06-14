@@ -1,5 +1,6 @@
 package com.szm.sys_zarz_mag.Dzial;
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,36 +23,36 @@ public class DzialController {
     }
 
     @GetMapping("/byNazwa/{nazwa}")
-    public Dzial findDzialByNazwa(@PathVariable String nazwa) {
+    public Dzial findDzialByNazwa(@PathVariable("nazwa") String nazwa) {
         return dzialService.findDzialByNazwa(nazwa);
     }
 
     @GetMapping("/byId/{id}")
-    public Dzial findDzialById(@PathVariable long id) {
+    public Dzial findDzialById(@PathVariable("id") long id) {
         return dzialService.findDzialById(id);
     }
 
 
-    @GetMapping("/byIdAndNazwa/{id}/{nazwa}")
-    public Dzial findDzialByIdAndNazwa(@PathVariable long id, @PathVariable String nazwa) {
-        return dzialService.findDzialByIdAndNazwa(id, nazwa);
+    @GetMapping("/byIdAndNazwa/{id}/{dzial}")
+    public Dzial findDzialByIdAndNazwa(@PathVariable("id") long id, @PathVariable("dzial") String dzial) {
+        return dzialService.findDzialByIdAndNazwa(id, dzial);
     }
 
-
+    @Transactional
     @DeleteMapping("/deleteByNazwa/{nazwa}")
-    public void deleteDzialByNazwa(@PathVariable String nazwa) {
-        dzialService.deleteDzialByNazwa(nazwa);
+    public void deleteDzialByNazwa(@PathVariable("nazwa") String dzial) {
+        dzialService.deleteDzialByNazwa(dzial);
     }
 
 
     @GetMapping("/byPartialNazwa/{partialNazwa}")
-    public List<Dzial> findDzialByPartialNazwa(@PathVariable String partialNazwa) {
+    public List<Dzial> findDzialByPartialNazwa(@PathVariable("partialNazwa") String partialNazwa) {
         return dzialService.findDzialByPartialNazwa(partialNazwa);
     }
 
 
     @GetMapping("/byNazwaSorted/{nazwa}")
-    public List<Dzial> findDzialByNazwaSorted(@PathVariable String nazwa) {
+    public List<Dzial> findDzialByNazwaSorted(@PathVariable("nazwa") String nazwa) {
         return dzialService.findDzialByNazwaSorted(nazwa);
     }
 
@@ -63,7 +64,7 @@ public class DzialController {
 
 
     @GetMapping("/countByNazwa/{nazwa}")
-    public int countDzialByNazwa(@PathVariable String nazwa) {
+    public int countDzialByNazwa(@PathVariable("nazwa") String nazwa) {
         return dzialService.countDzialByNazwa(nazwa);
     }
 }

@@ -42,13 +42,13 @@ public class IdDzialStanController {
 
 
     @GetMapping("/countByStanowisko/{idStanowisko}")
-    public int countIdDzialStanByStanowisko(@PathVariable Long idStanowisko) {
+    public int countIdDzialStanByStanowisko(@PathVariable("idStanowisko") Long idStanowisko) {
         return idDzialStanService.countIdDzialStanByStanowisko(idStanowisko);
     }
 
 
     @GetMapping("/countByDzial/{idDzial}")
-    public int countIdDzialStanByDzial(@PathVariable Long idDzial) {
+    public int countIdDzialStanByDzial(@PathVariable("idDzial") Long idDzial) {
         return idDzialStanService.countIdDzialStanByDzial(idDzial);
     }
 }

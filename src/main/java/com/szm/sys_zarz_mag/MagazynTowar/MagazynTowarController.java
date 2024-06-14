@@ -16,8 +16,9 @@ public class MagazynTowarController {
         this.magazynTowarService = magazynTowarService;
     }
 
+    //Całość do poprawy
     @GetMapping("/towaryWMagazynie/{idMagazyn}")
-    public List<MagazynTowar> znajdzTowaryWMagazynie(@PathVariable Long idMagazyn) {
+    public List<MagazynTowar> znajdzTowaryWMagazynie(@PathVariable("idMagazyn") Long idMagazyn) {
         return magazynTowarService.znajdzTowaryWMagazynie(idMagazyn);
     }
 

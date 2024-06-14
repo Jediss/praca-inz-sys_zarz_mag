@@ -17,37 +17,37 @@ public class MiejsceSkladowaniaController {
     }
 
     @GetMapping("/byHala/{isHala}")
-    public List<MiejsceSkladowania> findMiejsceSkladowaniaByHala(@PathVariable boolean isHala) {
+    public List<MiejsceSkladowania> findMiejsceSkladowaniaByHala(@PathVariable("isHala") boolean isHala) {
         return miejsceSkladowaniaService.findMiejsceSkladowaniaByHala(isHala);
     }
 
     @GetMapping("/byPlac/{isPlac}")
-    public List<MiejsceSkladowania> findMiejsceSkladowaniaByPlac(@PathVariable boolean isPlac) {
+    public List<MiejsceSkladowania> findMiejsceSkladowaniaByPlac(@PathVariable("isPlac") boolean isPlac) {
         return miejsceSkladowaniaService.findMiejsceSkladowaniaByPlac(isPlac);
     }
 
     @GetMapping("/byLevel/{level}")
-    public List<MiejsceSkladowania> findMiejsceSkladowaniaByLevel(@PathVariable int level) {
+    public List<MiejsceSkladowania> findMiejsceSkladowaniaByLevel(@PathVariable("level") int level) {
         return miejsceSkladowaniaService.findMiejsceSkladowaniaByLevel(level);
     }
 
     @GetMapping("/byCoordinates/{xCoordinate}/{yCoordinate}")
-    public MiejsceSkladowania findMiejsceSkladowaniaByCoordinates(@PathVariable int xCoordinate, @PathVariable int yCoordinate) {
+    public MiejsceSkladowania findMiejsceSkladowaniaByCoordinates(@PathVariable("xCoordinate") int xCoordinate, @PathVariable("yCoordinate") int yCoordinate) {
         return miejsceSkladowaniaService.findMiejsceSkladowaniaByCoordinates(xCoordinate, yCoordinate);
     }
 
     @GetMapping("/byCoordinatesAndLevel/{xCoordinate}/{yCoordinate}/{level}")
-    public MiejsceSkladowania findMiejsceSkladowaniaByCoordinatesAndLevel(@PathVariable int xCoordinate, @PathVariable int yCoordinate, @PathVariable int level) {
+    public MiejsceSkladowania findMiejsceSkladowaniaByCoordinatesAndLevel(@PathVariable("xCoordinate") int xCoordinate, @PathVariable("yCoordinate") int yCoordinate, @PathVariable("level") int level) {
         return miejsceSkladowaniaService.findMiejsceSkladowaniaByCoordinatesAndLevel(xCoordinate, yCoordinate, level);
     }
 
     @DeleteMapping("/deleteByCoordinates/{xCoordinate}/{yCoordinate}")
-    public void deleteMiejsceSkladowaniaByCoordinates(@PathVariable int xCoordinate, @PathVariable int yCoordinate) {
+    public void deleteMiejsceSkladowaniaByCoordinates(@PathVariable("xCoordinate") int xCoordinate, @PathVariable("yCoordinate") int yCoordinate) {
         miejsceSkladowaniaService.deleteMiejsceSkladowaniaByCoordinates(xCoordinate, yCoordinate);
     }
 
     @DeleteMapping("/deleteByCoordinatesAndLevel/{xCoordinate}/{yCoordinate}/{level}")
-    public void deleteMiejsceSkladowaniaByCoordinatesAndLevel(@PathVariable int xCoordinate, @PathVariable int yCoordinate, @PathVariable int level) {
+    public void deleteMiejsceSkladowaniaByCoordinatesAndLevel(@PathVariable("xCoordinate") int xCoordinate, @PathVariable("yCoordinate") int yCoordinate, @PathVariable("level") int level) {
         miejsceSkladowaniaService.deleteMiejsceSkladowaniaByCoordinatesAndLevel(xCoordinate, yCoordinate, level);
     }
 

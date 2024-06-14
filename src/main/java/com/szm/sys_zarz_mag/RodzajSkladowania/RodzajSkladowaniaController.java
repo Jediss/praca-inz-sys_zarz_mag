@@ -17,22 +17,22 @@ public class RodzajSkladowaniaController {
     }
 
     @GetMapping("/findByNazwa/{nazwaRodzaju}")
-    public RodzajSkladowania findRodzajSkladowaniaByNazwa(@PathVariable String nazwaRodzaju) {
+    public RodzajSkladowania findRodzajSkladowaniaByNazwa(@PathVariable("nazwaRodzaju") String nazwaRodzaju) {
         return rodzajSkladowaniaService.findRodzajSkladowaniaByNazwa(nazwaRodzaju);
     }
 
     @GetMapping("/findById/{id}")
-    public RodzajSkladowania findRodzajSkladowaniaById(@PathVariable long id) {
+    public RodzajSkladowania findRodzajSkladowaniaById(@PathVariable("id") long id) {
         return rodzajSkladowaniaService.findRodzajSkladowaniaById(id);
     }
 
     @DeleteMapping("/deleteByNazwa/{nazwaRodzaju}")
-    public void deleteRodzajSkladowaniaByNazwa(@PathVariable String nazwaRodzaju) {
+    public void deleteRodzajSkladowaniaByNazwa(@PathVariable("nazwaRodzaju") String nazwaRodzaju) {
         rodzajSkladowaniaService.deleteRodzajSkladowaniaByNazwa(nazwaRodzaju);
     }
 
     @GetMapping("/findByFragmentNazwy/{fragment}")
-    public List<RodzajSkladowania> findRodzajeSkladowaniaByFragmentNazwy(@PathVariable String fragment) {
+    public List<RodzajSkladowania> findRodzajeSkladowaniaByFragmentNazwy(@PathVariable("fragment") String fragment) {
         return rodzajSkladowaniaService.findRodzajeSkladowaniaByFragmentNazwy(fragment);
     }
 
@@ -42,7 +42,7 @@ public class RodzajSkladowaniaController {
     }
 
     @GetMapping("/countByNazwa/{nazwaRodzaju}")
-    public int countRodzajeSkladowaniaByNazwa(@PathVariable String nazwaRodzaju) {
+    public int countRodzajeSkladowaniaByNazwa(@PathVariable("nazwaRodzaju") String nazwaRodzaju) {
         return rodzajSkladowaniaService.countRodzajeSkladowaniaByNazwa(nazwaRodzaju);
     }
 }
