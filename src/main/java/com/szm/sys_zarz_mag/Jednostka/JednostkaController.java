@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3001")
 @RequestMapping("/jednostka")
 public class JednostkaController {
 
@@ -14,6 +15,11 @@ public class JednostkaController {
     @Autowired
     public JednostkaController(JednostkaService jednostkaService) {
         this.jednostkaService = jednostkaService;
+    }
+
+    @GetMapping("/all")
+    public List<Jednostka> findAllJednostki() {
+        return jednostkaService.findAllJednostki();
     }
 
     @GetMapping("/byNazwa/{nazwaJednostki}")

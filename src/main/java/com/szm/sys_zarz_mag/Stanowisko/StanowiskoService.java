@@ -13,6 +13,25 @@ public class StanowiskoService {
         this.stanowiskoRepository = stanowiskoRepository;
     }
 
+    public Stanowisko saveStanowisko(Stanowisko stanowisko) {
+        return stanowiskoRepository.save(stanowisko);
+    }
+
+    public void deleteStanowiskoByNazwa(String nazwa) {
+        stanowiskoRepository.deleteByStanowisko(nazwa);
+    }
+
+    public Stanowisko updateStanowisko(String nazwa, Stanowisko stanowisko) {
+        Stanowisko stanowiskoDB = stanowiskoRepository.findByStanowisko(nazwa);
+
+        if(stanowisko.getStanowisko() != null && !"".equalsIgnoreCase(stanowisko.getStanowisko())) {
+            stanowiskoDB.setStanowisko(stanowisko.getStanowisko());
+        }
+
+        return stanowiskoRepository.save(stanowiskoDB);
+    }
+
+
     public Stanowisko findStanowiskoByNazwa(String nazwa) {
         return stanowiskoRepository.findByStanowisko(nazwa);
     }
@@ -21,9 +40,6 @@ public class StanowiskoService {
         return stanowiskoRepository.findByIdStanowisko(id);
     }
 
-    public void deleteStanowiskoByNazwa(String nazwa) {
-        stanowiskoRepository.deleteByStanowisko(nazwa);
-    }
 
     public List<Stanowisko> findStanowiskoByFragmentNazwy(String fragmentNazwy) {
         return stanowiskoRepository.findByStanowiskoContaining(fragmentNazwy);
@@ -40,4 +56,6 @@ public class StanowiskoService {
     public int countStanowiskoByNazwa(String nazwa) {
         return stanowiskoRepository.countByStanowisko(nazwa);
     }
+
+
 }

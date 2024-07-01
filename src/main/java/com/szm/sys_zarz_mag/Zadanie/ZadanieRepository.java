@@ -29,4 +29,6 @@ public interface ZadanieRepository extends JpaRepository<Zadanie, Long> {
 
     //Znajdź Zadanie na podstawie ID Pracownika
     List<Zadanie> findByPracownik_IdPracownik(Long idPracownik);
+
+    Zadanie findByZadanieTytul(String tytul);
 }

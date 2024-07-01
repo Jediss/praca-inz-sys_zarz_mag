@@ -19,16 +19,6 @@ public class TowarController {
         this.towarService = towarService;
     }
 
-    @GetMapping("/znajdzPoNazwie/{nazwaTowar}")
-    public Towar znajdzTowarNaPodstawieNazwy(@PathVariable("nazwaTowar") String nazwaTowar) {
-        return towarService.znajdzTowarNaPodstawieNazwy(nazwaTowar);
-    }
-
-    @GetMapping("/znajdzWiekszeNiz/{ilosc}")
-    public List<Towar> znajdzTowaryZIlosciaWiekszaNiz(@PathVariable("ilosc") double ilosc) {
-        return towarService.znajdzTowaryZIlosciaWiekszaNiz(ilosc);
-    }
-
     @PostMapping("/dodajNazwe")
     public void dodajNazweTowaru(@RequestParam long towarId, @RequestParam String nazwa) {
         towarService.dodajNazweTowaru(towarId, nazwa);
@@ -99,6 +89,19 @@ public class TowarController {
         towarService.usunTowar(towarId);
     }
 
+
+
+
+    @GetMapping("/znajdzPoNazwie/{nazwaTowar}")
+    public Towar znajdzTowarNaPodstawieNazwy(@PathVariable("nazwaTowar") String nazwaTowar) {
+        return towarService.znajdzTowarNaPodstawieNazwy(nazwaTowar);
+    }
+
+    @GetMapping("/znajdzWiekszeNiz/{ilosc}")
+    public List<Towar> znajdzTowaryZIlosciaWiekszaNiz(@PathVariable("ilosc") double ilosc) {
+        return towarService.znajdzTowaryZIlosciaWiekszaNiz(ilosc);
+    }
+
     @GetMapping("/znajdzMniejszeNiz/{ilosc}")
     public List<Towar> znajdzTowaryZIlosciaMniejszaNiz(@PathVariable("ilosc") double ilosc) {
         return towarService.znajdzTowaryZIlosciaMniejszaNiz(ilosc);
@@ -123,6 +126,8 @@ public class TowarController {
     public int policzTowaryZNazwa(@PathVariable("nazwaTowar") String nazwaTowar) {
         return towarService.policzTowaryZNazwa(nazwaTowar);
     }
+
+
 
     @PostMapping("/dodajPelneMiejsceSkladowania")
     public void dodajMiejsceSkladowania(@RequestParam long towarId, @RequestBody MiejsceSkladowania miejsceSkladowania) {

@@ -22,19 +22,21 @@ public class ZadanieController {
         return zadanieService.getAllZadania();
     }
 
-    @GetMapping("/getById/{id}")
-    public Zadanie getZadanieById(@PathVariable("id") Long id) {
-        return zadanieService.getZadanieById(id);
-    }
 
     @DeleteMapping("/deleteById/{id}")
     public void deleteZadanieById(@PathVariable("id") Long id) {
         zadanieService.deleteZadanieById(id);
     }
 
-    @DeleteMapping("/deleteByOpis/{opis}")
-    public void deleteZadanieByOpis(@PathVariable("id") String opis) {
-        zadanieService.deleteZadanieByOpis(opis);
+
+    @GetMapping("/getById/{id}")
+    public Zadanie getZadanieById(@PathVariable("id") Long id) {
+        return zadanieService.getZadanieById(id);
+    }
+
+    @GetMapping("/getByTytul/{tytul}")
+    public Zadanie getZadanieByTytul(@PathVariable("tytul") String tytul) {
+        return zadanieService.getZadanieByTytul(tytul);
     }
 
     @GetMapping("/getByPracownik")

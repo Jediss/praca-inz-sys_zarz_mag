@@ -35,14 +35,6 @@ public interface IdDzialStanRepository extends JpaRepository<IdDzialStan, Long> 
     List<IdDzialStan> findByDzial_IdDzial(Long idDzial);
 
 
-    // Metoda usuwająca obiekty IdDzialStan na podstawie stanowiska
-    void deleteByStanowisko(Stanowisko stanowisko);
-
-
-    // Metoda usuwająca obiekty IdDzialStan na podstawie działu
-    void deleteByDzial(Dzial dzial);
-
-
     // Metoda zwracająca liczbę obiektów IdDzialStan na podstawie identyfikatora stanowiska
     int countByStanowisko_IdStanowisko(Long idStanowisko);
 

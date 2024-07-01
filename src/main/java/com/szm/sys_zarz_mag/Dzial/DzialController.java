@@ -22,6 +22,18 @@ public class DzialController {
         return dzialService.saveDzial(dzial);
     }
 
+    @Transactional
+    @DeleteMapping("/deleteByNazwa/{nazwa}")
+    public void deleteDzialByNazwa(@PathVariable("nazwa") String dzial) {
+        dzialService.deleteDzialByNazwa(dzial);
+    }
+
+    @PutMapping("/updateDzial/{nazwa}")
+    public Dzial updateDzial(@PathVariable("nazwa") String nazwa, @RequestBody Dzial dzial)
+    {
+        return dzialService.updateDzial(nazwa, dzial);
+    }
+
     @GetMapping("/byNazwa/{nazwa}")
     public Dzial findDzialByNazwa(@PathVariable("nazwa") String nazwa) {
         return dzialService.findDzialByNazwa(nazwa);
@@ -32,36 +44,25 @@ public class DzialController {
         return dzialService.findDzialById(id);
     }
 
-
     @GetMapping("/byIdAndNazwa/{id}/{dzial}")
     public Dzial findDzialByIdAndNazwa(@PathVariable("id") long id, @PathVariable("dzial") String dzial) {
         return dzialService.findDzialByIdAndNazwa(id, dzial);
     }
-
-    @Transactional
-    @DeleteMapping("/deleteByNazwa/{nazwa}")
-    public void deleteDzialByNazwa(@PathVariable("nazwa") String dzial) {
-        dzialService.deleteDzialByNazwa(dzial);
-    }
-
 
     @GetMapping("/byPartialNazwa/{partialNazwa}")
     public List<Dzial> findDzialByPartialNazwa(@PathVariable("partialNazwa") String partialNazwa) {
         return dzialService.findDzialByPartialNazwa(partialNazwa);
     }
 
-
     @GetMapping("/byNazwaSorted/{nazwa}")
     public List<Dzial> findDzialByNazwaSorted(@PathVariable("nazwa") String nazwa) {
         return dzialService.findDzialByNazwaSorted(nazwa);
     }
 
-
     @GetMapping("/allNotNull")
     public List<Dzial> findDzialNotNull() {
         return dzialService.findDzialNotNull();
     }
-
 
     @GetMapping("/countByNazwa/{nazwa}")
     public int countDzialByNazwa(@PathVariable("nazwa") String nazwa) {

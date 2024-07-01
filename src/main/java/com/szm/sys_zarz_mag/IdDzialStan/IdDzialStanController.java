@@ -29,18 +29,6 @@ public class IdDzialStanController {
     }
 
 
-    @DeleteMapping("/deleteByStanowisko")
-    public void deleteIdDzialStanByStanowisko(@RequestBody Stanowisko stanowisko) {
-        idDzialStanService.deleteIdDzialStanByStanowisko(stanowisko);
-    }
-
-
-    @DeleteMapping("/deleteByDzial")
-    public void deleteIdDzialStanByDzial(@RequestBody Dzial dzial) {
-        idDzialStanService.deleteIdDzialStanByDzial(dzial);
-    }
-
-
     @GetMapping("/countByStanowisko/{idStanowisko}")
     public int countIdDzialStanByStanowisko(@PathVariable("idStanowisko") Long idStanowisko) {
         return idDzialStanService.countIdDzialStanByStanowisko(idStanowisko);

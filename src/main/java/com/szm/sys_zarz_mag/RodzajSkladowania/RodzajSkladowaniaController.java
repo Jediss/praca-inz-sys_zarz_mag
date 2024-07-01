@@ -1,11 +1,13 @@
 package com.szm.sys_zarz_mag.RodzajSkladowania;
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3001")
 @RequestMapping("/rodzajSkladowania")
 public class RodzajSkladowaniaController {
 
@@ -16,6 +18,30 @@ public class RodzajSkladowaniaController {
         this.rodzajSkladowaniaService = rodzajSkladowaniaService;
     }
 
+
+    @PostMapping("/saveRodzajSkladowania")
+    public RodzajSkladowania saveRodzajSkladowania(@RequestBody RodzajSkladowania rodzajSkladowania) {
+        return rodzajSkladowaniaService.saveRodzajSkladowania(rodzajSkladowania);
+    }
+
+    @Transactional
+    @DeleteMapping("/deleteByNazwa/{nazwaRodzaju}")
+    public void deleteRodzajSkladowaniaByNazwa(@PathVariable("nazwaRodzaju") String nazwaRodzaju) {
+        rodzajSkladowaniaService.deleteRodzajSkladowaniaByNazwa(nazwaRodzaju);
+    }
+
+    @PutMapping("/updateRodzajSkladowania/{nazwaRodzaju}")
+    public RodzajSkladowania updateRodzajSkladowania(@PathVariable("nazwaRodzaju") String nazwaRodzaju, @RequestBody RodzajSkladowania rodzajSkladowania)
+    {
+        return rodzajSkladowaniaService.updateRodzajSkladowania(nazwaRodzaju, rodzajSkladowania);
+    }
+
+
+    @GetMapping("/all")
+    public List<RodzajSkladowania> findAllRodzajeSkladowania() {
+        return rodzajSkladowaniaService.findAllRodzajeSkladowania();
+    }
+
     @GetMapping("/findByNazwa/{nazwaRodzaju}")
     public RodzajSkladowania findRodzajSkladowaniaByNazwa(@PathVariable("nazwaRodzaju") String nazwaRodzaju) {
         return rodzajSkladowaniaService.findRodzajSkladowaniaByNazwa(nazwaRodzaju);
@@ -24,11 +50,6 @@ public class RodzajSkladowaniaController {
     @GetMapping("/findById/{id}")
     public RodzajSkladowania findRodzajSkladowaniaById(@PathVariable("id") long id) {
         return rodzajSkladowaniaService.findRodzajSkladowaniaById(id);
-    }
-
-    @DeleteMapping("/deleteByNazwa/{nazwaRodzaju}")
-    public void deleteRodzajSkladowaniaByNazwa(@PathVariable("nazwaRodzaju") String nazwaRodzaju) {
-        rodzajSkladowaniaService.deleteRodzajSkladowaniaByNazwa(nazwaRodzaju);
     }
 
     @GetMapping("/findByFragmentNazwy/{fragment}")

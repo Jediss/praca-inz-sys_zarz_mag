@@ -112,6 +112,7 @@ public class TowarService {
     }
 
 
+
     //Metoda zwracająca towary na podstawie ilości mniejszej niż podana
     public List<Towar> znajdzTowaryZIlosciaMniejszaNiz(double ilosc) {
         return towarRepository.findByIloscLessThan(ilosc);
@@ -140,6 +141,8 @@ public class TowarService {
     public int policzTowaryZNazwa(String nazwaTowar) {
         return towarRepository.countByNazwaTowar(nazwaTowar);
     }
+
+
 
 
     //Metoda dodająca pełne miejsce składowania towaru

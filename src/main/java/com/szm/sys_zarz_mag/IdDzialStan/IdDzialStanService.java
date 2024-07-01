@@ -40,13 +40,6 @@ public class IdDzialStanService {
         return idDzialStanRepository.findByDzial(dzial);
     }
 
-    public void deleteIdDzialStanByStanowisko(Stanowisko stanowisko) {
-        idDzialStanRepository.deleteByStanowisko(stanowisko);
-    }
-
-    public void deleteIdDzialStanByDzial(Dzial dzial) {
-        idDzialStanRepository.deleteByDzial(dzial);
-    }
 
     public int countIdDzialStanByStanowisko(Long idStanowisko) {
         return idDzialStanRepository.countByStanowisko_IdStanowisko(idStanowisko);

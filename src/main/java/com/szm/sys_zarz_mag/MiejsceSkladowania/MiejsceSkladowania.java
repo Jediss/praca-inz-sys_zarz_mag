@@ -18,16 +18,18 @@ public class MiejsceSkladowania {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idMiejsceSkladowania;
 
-    private boolean hala;
+    @Column
+    private int rzadTowar;
 
-    private boolean plac;
+    @Column
+    private int stelazTowar;
 
-    //@Column(nullable = false)
-    private int x;
+    @Column
+    private int levelTowar;
 
-    //@Column(nullable = false)
-    private int y;
+    @Column
+    private int levelIndexTowar;
 
-    //@Column(nullable = false)
-    private int level;
+    @Column(nullable = false)
+    private boolean czyWolneTowar;
 }

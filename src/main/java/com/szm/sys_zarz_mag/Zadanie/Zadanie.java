@@ -23,7 +23,10 @@ public class Zadanie {
     @JoinColumn(name = "idPracownik")
     private Pracownik pracownik;
 
-    @Column(name = "opis", length = 1000, nullable = false)
+    @Column(name = "opis", length = 1000, nullable = true)
     private String zadanieOpis;
+
+    @Column(name = "zadanieTytul", length = 100, nullable = false, unique = true)
+    private String zadanieTytul;
 
 }

@@ -1,5 +1,6 @@
 package com.szm.sys_zarz_mag.Stanowisko;
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +17,22 @@ public class StanowiskoController {
         this.stanowiskoService = stanowiskoService;
     }
 
+    @PostMapping ("/saveStanowisko")
+    public Stanowisko saveStanowisko(@RequestBody Stanowisko stanowisko) {
+        return stanowiskoService.saveStanowisko(stanowisko);
+    }
+
+    @Transactional
+    @DeleteMapping("/deleteByNazwa/{nazwa}")
+    public void deleteStanowiskoByNazwa(@PathVariable("nazwa") String nazwa) {
+        stanowiskoService.deleteStanowiskoByNazwa(nazwa);
+    }
+
+    @PutMapping("/updateStanowisko/{nazwa}")
+    public Stanowisko updateStanowisko(@PathVariable("nazwa") String nazwa, @RequestBody Stanowisko stanowisko) {
+        return stanowiskoService.updateStanowisko(nazwa, stanowisko);
+    }
+
     @GetMapping("/findByNazwa/{nazwa}")
     public Stanowisko findStanowiskoByNazwa(@PathVariable("nazwa") String nazwa) {
         return stanowiskoService.findStanowiskoByNazwa(nazwa);
@@ -26,10 +43,6 @@ public class StanowiskoController {
         return stanowiskoService.findStanowiskoById(id);
     }
 
-    @DeleteMapping("/deleteByNazwa/{nazwa}")
-    public void deleteStanowiskoByNazwa(@PathVariable("nazwa") String nazwa) {
-        stanowiskoService.deleteStanowiskoByNazwa(nazwa);
-    }
 
     @GetMapping("/findByFragmentNazwy/{fragment}")
     public List<Stanowisko> findStanowiskoByFragmentNazwy(@PathVariable("fragment") String fragment) {

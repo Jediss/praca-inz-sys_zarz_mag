@@ -20,18 +20,16 @@ public class ZadanieService {
         return zadanieRepository.findAll();
     }
 
-    public Zadanie getZadanieById(Long id) {
-        return zadanieRepository.findById(id).orElse(null);
-    }
 
     public void deleteZadanieById(Long id) {
         zadanieRepository.deleteById(id);
     }
 
-    public void deleteZadanieByOpis(String opis) {
-        List<Zadanie> zadania = zadanieRepository.findByZadanieOpis(opis);
-        zadania.forEach(zadanieRepository::delete);
+
+    public Zadanie getZadanieById(Long id) {
+        return zadanieRepository.findById(id).orElse(null);
     }
+
 
     public List<Zadanie> getZadaniaByPracownik(Pracownik pracownik) {
         return zadanieRepository.findByPracownik(pracownik);
@@ -47,5 +45,9 @@ public class ZadanieService {
 
     public List<Zadanie> getZadaniaByPracownikId(Long idPracownik) {
         return zadanieRepository.findByPracownik_IdPracownik(idPracownik);
+    }
+
+    public Zadanie getZadanieByTytul(String tytul) {
+        return zadanieRepository.findByZadanieTytul(tytul);
     }
 }

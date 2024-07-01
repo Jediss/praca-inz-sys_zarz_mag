@@ -42,4 +42,8 @@ public class JednostkaService {
     public int countJednostkiByNazwa(String nazwaJednostki) {
         return jednostkaRepository.countByJednostka(nazwaJednostki);
     }
+
+    public List<Jednostka> findAllJednostki() {
+        return jednostkaRepository.findAll();
+    }
 }

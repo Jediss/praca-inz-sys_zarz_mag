@@ -16,90 +16,50 @@ public class MiejsceSkladowaniaController {
         this.miejsceSkladowaniaService = miejsceSkladowaniaService;
     }
 
-    @GetMapping("/byHala/{isHala}")
-    public List<MiejsceSkladowania> findMiejsceSkladowaniaByHala(@PathVariable("isHala") boolean isHala) {
-        return miejsceSkladowaniaService.findMiejsceSkladowaniaByHala(isHala);
+    @PostMapping("/saveMiejsceSkladowania")
+    public MiejsceSkladowania saveMiejsceSkladowania(@RequestBody MiejsceSkladowania miejsceSkladowania) {
+        return miejsceSkladowaniaService.saveMiejsceSkladowania(miejsceSkladowania);
     }
 
-    @GetMapping("/byPlac/{isPlac}")
-    public List<MiejsceSkladowania> findMiejsceSkladowaniaByPlac(@PathVariable("isPlac") boolean isPlac) {
-        return miejsceSkladowaniaService.findMiejsceSkladowaniaByPlac(isPlac);
+    @DeleteMapping("/deleteById/{id}")
+    public void deleteMiejsceSkladowaniaById(@PathVariable("id") long id) {
+        miejsceSkladowaniaService.deleteMiejsceSkladowaniaById(id);
     }
 
-    @GetMapping("/byLevel/{level}")
-    public List<MiejsceSkladowania> findMiejsceSkladowaniaByLevel(@PathVariable("level") int level) {
-        return miejsceSkladowaniaService.findMiejsceSkladowaniaByLevel(level);
+    @PutMapping("/updateMiejsceSkladowania/{id}")
+    public MiejsceSkladowania updateMiejsceSkladowania(@PathVariable("id") long id, @RequestBody MiejsceSkladowania miejsceSkladowania) {
+        return miejsceSkladowaniaService.updateMiejsceSkladowania(id, miejsceSkladowania);
     }
 
-    @GetMapping("/byCoordinates/{xCoordinate}/{yCoordinate}")
-    public MiejsceSkladowania findMiejsceSkladowaniaByCoordinates(@PathVariable("xCoordinate") int xCoordinate, @PathVariable("yCoordinate") int yCoordinate) {
-        return miejsceSkladowaniaService.findMiejsceSkladowaniaByCoordinates(xCoordinate, yCoordinate);
+    @GetMapping("/findById/{id}")
+    public MiejsceSkladowania findMiejsceSkladowaniaById(@PathVariable("id") long id) {
+        return miejsceSkladowaniaService.findMiejsceSkladowaniaById(id);
     }
 
-    @GetMapping("/byCoordinatesAndLevel/{xCoordinate}/{yCoordinate}/{level}")
-    public MiejsceSkladowania findMiejsceSkladowaniaByCoordinatesAndLevel(@PathVariable("xCoordinate") int xCoordinate, @PathVariable("yCoordinate") int yCoordinate, @PathVariable("level") int level) {
-        return miejsceSkladowaniaService.findMiejsceSkladowaniaByCoordinatesAndLevel(xCoordinate, yCoordinate, level);
-    }
+//    @GetMapping("/byHala/{isHala}")
+//    public List<MiejsceSkladowania> findMiejsceSkladowaniaByHala(@PathVariable("isHala") boolean isHala) {
+//        return miejsceSkladowaniaService.findMiejsceSkladowaniaByHala(isHala);
+//    }
 
-    @DeleteMapping("/deleteByCoordinates/{xCoordinate}/{yCoordinate}")
-    public void deleteMiejsceSkladowaniaByCoordinates(@PathVariable("xCoordinate") int xCoordinate, @PathVariable("yCoordinate") int yCoordinate) {
-        miejsceSkladowaniaService.deleteMiejsceSkladowaniaByCoordinates(xCoordinate, yCoordinate);
-    }
 
-    @DeleteMapping("/deleteByCoordinatesAndLevel/{xCoordinate}/{yCoordinate}/{level}")
-    public void deleteMiejsceSkladowaniaByCoordinatesAndLevel(@PathVariable("xCoordinate") int xCoordinate, @PathVariable("yCoordinate") int yCoordinate, @PathVariable("level") int level) {
-        miejsceSkladowaniaService.deleteMiejsceSkladowaniaByCoordinatesAndLevel(xCoordinate, yCoordinate, level);
-    }
 
-    // Modification endpoints for MiejsceSkladowania coordinates and level
-    @PutMapping("/modifyXCoordinate")
-    public void modifyMiejsceSkladowaniaXCoordinate(@RequestParam int value, @RequestParam boolean isAdding, @RequestParam int newValue) {
-        miejsceSkladowaniaService.modifyMiejsceSkladowaniaXCoordinate(value, isAdding, newValue);
-    }
+//    @GetMapping("/byCoordinatesAndLevel/{xCoordinate}/{yCoordinate}/{level}")
+//    public MiejsceSkladowania findMiejsceSkladowaniaByCoordinatesAndLevel(@PathVariable("xCoordinate") int xCoordinate, @PathVariable("yCoordinate") int yCoordinate, @PathVariable("level") int level) {
+//        return miejsceSkladowaniaService.findMiejsceSkladowaniaByCoordinatesAndLevel(xCoordinate, yCoordinate, level);
+//    }
 
-    @PutMapping("/modifyYCoordinate")
-    public void modifyMiejsceSkladowaniaYCoordinate(@RequestParam int value, @RequestParam boolean isAdding, @RequestParam int newValue) {
-        miejsceSkladowaniaService.modifyMiejsceSkladowaniaYCoordinate(value, isAdding, newValue);
-    }
 
-    @PutMapping("/modifyLevel")
-    public void modifyMiejsceSkladowaniaLevel(@RequestParam int value, @RequestParam boolean isAdding, @RequestParam int newValue) {
-        miejsceSkladowaniaService.modifyMiejsceSkladowaniaLevel(value, isAdding, newValue);
-    }
 
-    @PutMapping("/modifyHala")
-    public void modifyMiejsceSkladowaniaHala(@RequestParam boolean newValue) {
-        miejsceSkladowaniaService.modifyMiejsceSkladowaniaHala(newValue);
-    }
+//    @PutMapping("/modifyLevel")
+//    public void modifyMiejsceSkladowaniaLevel(@RequestParam int value, @RequestParam boolean isAdding, @RequestParam int newValue) {
+//        miejsceSkladowaniaService.modifyMiejsceSkladowaniaLevel(value, isAdding, newValue);
+//    }
 
-    @PutMapping("/modifyPlac")
-    public void modifyMiejsceSkladowaniaPlac(@RequestParam boolean newValue) {
-        miejsceSkladowaniaService.modifyMiejsceSkladowaniaPlac(newValue);
-    }
-    /*
-    //
-    @DeleteMapping("/removeXCoordinate")
-    public void removeValueFromXCoordinate() {
-        miejsceSkladowaniaService.removeValueFromXCoordinate();
-    }
 
-    @DeleteMapping("/removeYCoordinate")
-    public void removeValueFromYCoordinate() {
-        miejsceSkladowaniaService.removeValueFromYCoordinate();
-    }
+//    /*
+//    //
+//    @DeleteMapping("/removeXCoordinate")
+//    public void removeValueFromXCoordinate() {
+//        miejsceSkladowaniaService.removeValueFromXCoordinate();
 
-    @DeleteMapping("/removeLevel")
-    public void removeValueFromLevel() {
-        miejsceSkladowaniaService.removeValueFromLevel();
-    }
-
-    @DeleteMapping("/removeHala")
-    public void removeValueFromHala() {
-        miejsceSkladowaniaService.removeValueFromHala();
-    }
-
-    @DeleteMapping("/removePlac")
-    public void removeValueFromPlac() {
-        miejsceSkladowaniaService.removeValueFromPlac();
-    }*/
 }

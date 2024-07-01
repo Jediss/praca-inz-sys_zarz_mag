@@ -8,17 +8,16 @@ import java.util.List;
 @Repository
 public interface RodzajSkladowaniaRepository extends JpaRepository<RodzajSkladowania, Long> {
 
-    //Zapytanie zwracające rodzaj składowania na podstawie nazwy
-    RodzajSkladowania findByRodzajSkladowania(String nazwaRodzaju);
-
-
-    //Zapytanie zwracające rodzaj składowania na podstawie identyfikatora rodzaju składowania
-    RodzajSkladowania findByIdRodzajSkladowania(long idRodzajSkladowania);
-
-
     //Zapytanie usuwające rodzaj składowania na podstawie nazwy
     void deleteByRodzajSkladowania(String nazwaRodzaju);
 
+
+
+    //Zapytanie zwracające rodzaj składowania na podstawie nazwy
+    RodzajSkladowania findByRodzajSkladowania(String nazwaRodzaju);
+
+    //Zapytanie zwracające rodzaj składowania na podstawie identyfikatora rodzaju składowania
+    RodzajSkladowania findByIdRodzajSkladowania(long idRodzajSkladowania);
 
     //Zapytanie zwracające listę rodzajów składowania na podstawie fragmentu nazwy
     List<RodzajSkladowania> findByRodzajSkladowaniaContaining(String fragmentNazwy);
