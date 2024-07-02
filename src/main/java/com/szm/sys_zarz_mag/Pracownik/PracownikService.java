@@ -26,10 +26,6 @@ public class PracownikService {
         return pracownikRepository.findByIdPracownik(id);
     }
 
-    public Pracownik findPracownikByLogin(String login) {
-        return pracownikRepository.findByLogin(login);
-    }
-
     public void deletePracownikById(long id) {
         pracownikRepository.deleteById(id);
     }

@@ -29,10 +29,6 @@ public class PracownikController {
         return pracownikService.findPracownikById(id);
     }
 
-    @GetMapping("/byLogin/{login}")
-    public Pracownik findPracownikByLogin(@PathVariable("login") String login) {
-        return pracownikService.findPracownikByLogin(login);
-    }
     @DeleteMapping("/deleteById/{id}")
     public void deletePracownikById(@PathVariable("id") long id) {
         pracownikService.deletePracownikById(id);

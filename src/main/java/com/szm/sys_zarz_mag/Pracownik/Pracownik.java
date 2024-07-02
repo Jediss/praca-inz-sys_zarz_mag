@@ -1,16 +1,25 @@
 package com.szm.sys_zarz_mag.Pracownik;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import com.szm.sys_zarz_mag.IdDzialStan.IdDzialStan;
 import com.szm.sys_zarz_mag.Magazyn.Magazyn;
+import com.szm.sys_zarz_mag.Roles.Role;
 import com.szm.sys_zarz_mag.Stawka.Stawka;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "Pracownik")
+@Table(name = "Pracownik", uniqueConstraints = {
+        @UniqueConstraint(columnNames = "email"),
+        @UniqueConstraint(columnNames = "username")
+})
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -47,10 +56,29 @@ public class Pracownik {
     @Column(nullable = false)
     private String telefonP;
 
-    @Column(nullable = false, unique = true)
-    private String login;
+    @NotBlank
+    @Email
+    @Column(unique = true)
+    private String email;
 
-    @Column(nullable = false)
+    @NotBlank
+    @Column(unique = true)
+    private String username;
+
+    @NotBlank
+    @Column
     private String password;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(  name = "user_roles",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<Role> roles = new HashSet<>();
+
+    public Pracownik(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
 
 }

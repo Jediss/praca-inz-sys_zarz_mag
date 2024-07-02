@@ -7,8 +7,16 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
+
 @Repository
 public interface PracownikRepository extends JpaRepository<Pracownik, Long> {
+
+    Optional<Pracownik> findByUsername(String username);
+
+    Boolean existsByUsername(String username);
+
+    Boolean existsByEmail(String email);
 
     //Zapytanie zwracające pracownika na podstawie nazwiska
     Pracownik findByNazwisko(String nazwisko);
@@ -16,10 +24,6 @@ public interface PracownikRepository extends JpaRepository<Pracownik, Long> {
 
     //Zapytanie zwracające pracownika na podstawie identyfikatora pracownika
     Pracownik findByIdPracownik(long idPracownik);
-
-
-    //Zapytanie zwracające pracownika na podstawie loginu
-    Pracownik findByLogin(String login);
 
 
     //Zapytanie usuwające pracownika na podstawie identyfikatora pracownika
