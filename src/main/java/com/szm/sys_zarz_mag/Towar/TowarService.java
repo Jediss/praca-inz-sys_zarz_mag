@@ -6,6 +6,7 @@ import com.szm.sys_zarz_mag.RodzajSkladowania.RodzajSkladowania;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -41,13 +42,13 @@ public class TowarService {
 
 
     //Metoda dodająca datę przyjęcia towaru
-    public void dodajDatePrzyjecia(long towarId, String data) {
+    public void dodajDatePrzyjecia(long towarId, LocalDate data) {
         towarRepository.addDataPrzyjecia(towarId, data);
     }
 
 
     //Metoda dodająca datę wysyłki towaru
-    public void dodajDateWysylki(long towarId, String data) {
+    public void dodajDateWysylki(long towarId, LocalDate data) {
         towarRepository.addDataWysylki(towarId, data);
     }
 
@@ -77,13 +78,13 @@ public class TowarService {
 
 
     //Metoda edycji Daty przyjęcia towaru
-    public void edytujDatePrzyjecia(long towarId, String data) {
+    public void edytujDatePrzyjecia(long towarId, LocalDate data) {
         towarRepository.editDataPrzyjecia(towarId, data);
     }
 
 
     //Metoda edycji Daty wysyłki towaru
-    public void edytujDateWysylki(long towarId, String data) {
+    public void edytujDateWysylki(long towarId, LocalDate data) {
         towarRepository.editDataWysylki(towarId, data);
     }
 
@@ -126,7 +127,7 @@ public class TowarService {
 
 
     //Metoda zwracająca towary na podstawie daty wysyłki
-    public List<Towar> znajdzTowaryZDataWysylki(String dataWysylki) {
+    public List<Towar> znajdzTowaryZDataWysylki(LocalDate dataWysylki) {
         return towarRepository.findByDataWysylki(dataWysylki);
     }
 

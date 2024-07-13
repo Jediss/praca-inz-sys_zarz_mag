@@ -8,6 +8,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.cglib.core.Local;
+
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "Towar")
@@ -40,7 +43,7 @@ public class Towar {
     private double ilosc;
 
     @Column(nullable = false)
-    private String dataPrzyjecia;
+    private LocalDate dataPrzyjecia;
 
-    private String dataWysylki;
+    private LocalDate dataWysylki;
 }

@@ -6,6 +6,7 @@ import com.szm.sys_zarz_mag.Stawka.Stawka;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,11 +36,7 @@ public interface PracownikRepository extends JpaRepository<Pracownik, Long> {
 
 
     //Zapytanie zwracające listę pracowników na podstawie daty zatrudnienia
-    List<Pracownik> findByDataZatrud(String dataZatrud);
-
-
-    //Zapytanie zwracające listę pracowników na podstawie daty zwolnienia
-    List<Pracownik> findByDataZwol(String dataZwol);
+    List<Pracownik> findByDataZatrud(LocalDate dataZatrud);
 
 
     //Zapytanie zwracające listę pracowników na podstawie numeru telefonu

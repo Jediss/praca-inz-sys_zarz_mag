@@ -6,6 +6,7 @@ import com.szm.sys_zarz_mag.Stawka.Stawka;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -34,12 +35,8 @@ public class PracownikService {
         return pracownikRepository.findByImie(imie);
     }
 
-    public List<Pracownik> findPracownicyByDataZatrud(String dataZatrud) {
+    public List<Pracownik> findPracownicyByDataZatrud(LocalDate dataZatrud) {
         return pracownikRepository.findByDataZatrud(dataZatrud);
-    }
-
-    public List<Pracownik> findPracownicyByDataZwol(String dataZwol) {
-        return pracownikRepository.findByDataZwol(dataZwol);
     }
 
     public List<Pracownik> findPracownicyByTelefon(String telefon) {

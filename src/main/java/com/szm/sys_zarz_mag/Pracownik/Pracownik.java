@@ -1,5 +1,6 @@
 package com.szm.sys_zarz_mag.Pracownik;
 
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -42,18 +43,16 @@ public class Pracownik {
     @JoinColumn(name = "idStawka")
     private Stawka stawka;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String imie;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String nazwisko;
 
-    @Column(nullable = false)
-    private String dataZatrud;
+    @Column(nullable = true)
+    private LocalDate dataZatrud;
 
-    private String dataZwol;
-
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String telefonP;
 
     @NotBlank

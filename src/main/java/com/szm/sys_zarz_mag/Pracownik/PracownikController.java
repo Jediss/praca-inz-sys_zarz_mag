@@ -4,8 +4,10 @@ import com.szm.sys_zarz_mag.IdDzialStan.IdDzialStan;
 import com.szm.sys_zarz_mag.Magazyn.Magazyn;
 import com.szm.sys_zarz_mag.Stawka.Stawka;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cglib.core.Local;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -40,13 +42,8 @@ public class PracownikController {
     }
 
     @GetMapping("/byDataZatrud/{dataZatrud}")
-    public List<Pracownik> findPracownicyByDataZatrud(@PathVariable("dataZatrud") String dataZatrud) {
+    public List<Pracownik> findPracownicyByDataZatrud(@PathVariable("dataZatrud") LocalDate dataZatrud) {
         return pracownikService.findPracownicyByDataZatrud(dataZatrud);
-    }
-
-    @GetMapping("/byDataZwol/{dataZwol}")
-    public List<Pracownik> findPracownicyByDataZwol(@PathVariable("dataZwol") String dataZwol) {
-        return pracownikService.findPracownicyByDataZwol(dataZwol);
     }
 
     @GetMapping("/byTelefon/{telefon}")

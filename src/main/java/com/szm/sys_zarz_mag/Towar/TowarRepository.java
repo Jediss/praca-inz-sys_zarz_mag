@@ -9,6 +9,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import com.szm.sys_zarz_mag.MiejsceSkladowania.MiejsceSkladowania;
 
+import java.time.LocalDate;
 import java.util.List;
 @Repository
 public interface TowarRepository extends JpaRepository<Towar, Long> {
@@ -30,7 +31,7 @@ public interface TowarRepository extends JpaRepository<Towar, Long> {
 
 
     //Zapytanie zwracające towary na podstawie daty wysyłki
-    List<Towar> findByDataWysylki(String dataWysylki);
+    List<Towar> findByDataWysylki(LocalDate dataWysylki);
 
 
     //Zapytanie zwracające towary na podstawie unikalności
@@ -56,13 +57,13 @@ public interface TowarRepository extends JpaRepository<Towar, Long> {
     //Dodanie daty przyjęcia towaru
     @Modifying
     @Query("UPDATE Towar t SET t.dataPrzyjecia = :data WHERE t.idTowar = :towarId")
-    void addDataPrzyjecia(@Param("towarId") long towarId, @Param("data") String data);
+    void addDataPrzyjecia(@Param("towarId") long towarId, @Param("data") LocalDate data);
 
 
     //Dodanie daty wysyłki towaru
     @Modifying
     @Query("UPDATE Towar t SET t.dataWysylki = :data WHERE t.idTowar = :towarId")
-    void addDataWysylki(@Param("towarId") long towarId, @Param("data") String data);
+    void addDataWysylki(@Param("towarId") long towarId, @Param("data") LocalDate data);
 
 
     //Dodanie pełnego miejsca składowania towaru
@@ -116,13 +117,13 @@ public interface TowarRepository extends JpaRepository<Towar, Long> {
     //Edycja daty przyjęcia towaru
     @Modifying
     @Query("UPDATE Towar t SET t.dataPrzyjecia = :data WHERE t.idTowar = :towarId")
-    void editDataPrzyjecia(@Param("towarId") long towarId, @Param("data") String data);
+    void editDataPrzyjecia(@Param("towarId") long towarId, @Param("data") LocalDate data);
 
 
     //Edycja daty wysyłki towaru
     @Modifying
     @Query("UPDATE Towar t SET t.dataWysylki = :data WHERE t.idTowar = :towarId")
-    void editDataWysylki(@Param("towarId") long towarId, @Param("data") String data);
+    void editDataWysylki(@Param("towarId") long towarId, @Param("data") LocalDate data);
 
 
     //Zapytanie usuwające dany towar

@@ -6,6 +6,7 @@ import com.szm.sys_zarz_mag.RodzajSkladowania.RodzajSkladowania;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -30,12 +31,12 @@ public class TowarController {
     }
 
     @PostMapping("/dodajDatePrzyjecia")
-    public void dodajDatePrzyjecia(@RequestParam long towarId, @RequestParam String data) {
+    public void dodajDatePrzyjecia(@RequestParam long towarId, @RequestParam LocalDate data) {
         towarService.dodajDatePrzyjecia(towarId, data);
     }
 
     @PostMapping("/dodajDateWysylki")
-    public void dodajDateWysylki(@RequestParam long towarId, @RequestParam String data) {
+    public void dodajDateWysylki(@RequestParam long towarId, @RequestParam LocalDate data) {
         towarService.dodajDateWysylki(towarId, data);
     }
 
@@ -60,12 +61,12 @@ public class TowarController {
     }
 
     @PutMapping("/edytujDatePrzyjecia")
-    public void edytujDatePrzyjecia(@RequestParam long towarId, @RequestParam String data) {
+    public void edytujDatePrzyjecia(@RequestParam long towarId, @RequestParam LocalDate data) {
         towarService.edytujDatePrzyjecia(towarId, data);
     }
 
     @PutMapping("/edytujDateWysylki")
-    public void edytujDateWysylki(@RequestParam long towarId, @RequestParam String data) {
+    public void edytujDateWysylki(@RequestParam long towarId, @RequestParam LocalDate data) {
         towarService.edytujDateWysylki(towarId, data);
     }
 
@@ -113,7 +114,7 @@ public class TowarController {
     }
 
     @GetMapping("/znajdzPoDacieWysylki/{dataWysylki}")
-    public List<Towar> znajdzTowaryZDataWysylki(@PathVariable("dataWysylki") String dataWysylki) {
+    public List<Towar> znajdzTowaryZDataWysylki(@PathVariable("dataWysylki") LocalDate dataWysylki) {
         return towarService.znajdzTowaryZDataWysylki(dataWysylki);
     }
 
