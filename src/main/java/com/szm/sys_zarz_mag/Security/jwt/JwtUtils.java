@@ -25,16 +25,21 @@ public class JwtUtils {
     @Value("${syszarz.app.jwtExpirationMs}")
     private int jwtExpirationMs;
 
-    public String generateJwtToken(Authentication authentication) {
 
-        UserDetailsImpl userPrincipal = (UserDetailsImpl) authentication.getPrincipal();
-
+    public String generateTokenFromUsername(String username) {
         return Jwts.builder()
-                .setSubject((userPrincipal.getUsername()))
+                .setSubject(username)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date((new Date()).getTime() + jwtExpirationMs))
                 .signWith(key(), SignatureAlgorithm.HS256)
                 .compact();
+    }
+
+    public String generateJwtToken(Authentication authentication) {
+
+        UserDetailsImpl userPrincipal = (UserDetailsImpl) authentication.getPrincipal();
+
+        return generateTokenFromUsername(userPrincipal.getUsername());
     }
 
     private Key key() {
@@ -46,10 +51,13 @@ public class JwtUtils {
                 .parseClaimsJws(token).getBody().getSubject();
     }
 
+
     public boolean validateJwtToken(String authToken) {
         try {
             Jwts.parser().setSigningKey(key()).build().parse(authToken);
             return true;
+        } catch (SignatureException e) {
+            logger.error("Invalid JWT signature: {}", e.getMessage());
         } catch (MalformedJwtException e) {
             logger.error("Invalid JWT token: {}", e.getMessage());
         } catch (ExpiredJwtException e) {
