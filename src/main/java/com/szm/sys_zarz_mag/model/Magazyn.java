@@ -30,10 +30,4 @@ public class Magazyn {
     @Column(nullable = false)
     private String adresMiastoM;
 
-    @Column(nullable = false)
-    private int szerokoscMagazyn;
-
-    @Column(nullable = false)
-    private int dlugoscMagazyn;
-
 }

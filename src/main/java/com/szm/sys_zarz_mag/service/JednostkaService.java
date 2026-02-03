@@ -17,35 +17,9 @@ public class JednostkaService {
         this.jednostkaRepository = jednostkaRepository;
     }
 
-    public Jednostka findJednostkaByNazwa(String nazwaJednostki) {
-        return jednostkaRepository.findByJednostka(nazwaJednostki);
-    }
-
-    public Jednostka findJednostkaById(long idJednostka) {
-        return jednostkaRepository.findByIdJednostka(idJednostka);
-    }
-
-    public void deleteJednostkaByNazwa(String nazwaJednostki) {
-        jednostkaRepository.deleteByJednostka(nazwaJednostki);
-    }
-
-    public List<Jednostka> findJednostkiByFragmentNazwy(String fragmentNazwy) {
-        return jednostkaRepository.findByJednostkaContaining(fragmentNazwy);
-    }
-
-    public List<Jednostka> findAllJednostkiSortedAlphabetically() {
-        return jednostkaRepository.findByOrderByJednostkaAsc();
-    }
-
-    public List<Jednostka> findExistingJednostki() {
-        return jednostkaRepository.findByJednostkaIsNotNull();
-    }
-
-    public int countJednostkiByNazwa(String nazwaJednostki) {
-        return jednostkaRepository.countByJednostka(nazwaJednostki);
-    }
-
     public List<Jednostka> findAllJednostki() {
         return jednostkaRepository.findAll();
     }
+
+    //TODO: add CRUD methods
 }

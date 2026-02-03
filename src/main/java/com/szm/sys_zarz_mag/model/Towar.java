@@ -1,3 +1,18 @@
+/**
+ * <h2>
+ * Model klasy Towar reprezentujący towar w systemie zarządzania magazynem.
+ * Zawiera informacje o nazwie towaru oraz datach przyjęcia i wysyłki.
+ * </h2>
+ *
+ * <p>Pytania do przemyślenia:
+ * <li>
+ *     Czy miejsce składowania, jednostka i rodzaj składowania powinny być
+ *     podpiętę pod tabele Towar czy może jednak pod tabelę Magazyn_Towar?
+ * </li>
+ * </p>
+ *
+ */
+
 package com.szm.sys_zarz_mag.model;
 
 import jakarta.persistence.*;

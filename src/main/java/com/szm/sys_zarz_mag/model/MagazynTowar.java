@@ -27,5 +27,8 @@ public class MagazynTowar {
     private Magazyn magazyn;
 
     @Column(nullable = false)
-    private double ilosc;
+    private double iloscTowar;
+
+    @Column
+    private Integer iloscStelazyM;
 }

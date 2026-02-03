@@ -5,7 +5,6 @@ import com.szm.sys_zarz_mag.repository.MiejsceSkladowaniaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 import java.util.Objects;
 
 @Service
@@ -18,12 +17,22 @@ public class MiejsceSkladowaniaService {
         this.miejsceSkladowaniaRepository = miejsceSkladowaniaRepository;
     }
 
-    public MiejsceSkladowania saveMiejsceSkladowania(MiejsceSkladowania miejsceSkladowania) {
-        return miejsceSkladowaniaRepository.save(miejsceSkladowania);
-    }
-
     public void deleteMiejsceSkladowaniaById(long id) {
         miejsceSkladowaniaRepository.deleteById(id);
+    }
+
+    /*TODO: add updateOrInsert method, 5 attributes in table:
+       architecture: stelaz_towar[ rzad_towar{ level_towar(levelIndex_towar) } ] + czy_wolne_towar boolean flag
+       - Potrzebne sprawdzenie czy nie ma dwóch takich samych kombinacji
+       archtektonicznych
+       - Jeżeli wprowadzono daną kombinację architektoniczną to dezaktywuje
+       się flaga czy_wolne_towar */
+
+
+    public void updateOrInsertMiejsceSkladowania(MiejsceSkladowania miejsceSkladowania){
+
+        MiejsceSkladowania existingPlace =
+                miejsceSkladowaniaRepository.findById(miejsceSkladowania.getIdMiejsceSkladowania()).orElse(null);
     }
 
     public MiejsceSkladowania updateMiejsceSkladowania(long id, MiejsceSkladowania miejsceSkladowania) {
@@ -52,33 +61,6 @@ public class MiejsceSkladowaniaService {
 
         return miejsceSkladowaniaRepository.save(miejsceSkladowaniaDB);
     }
-
-    public MiejsceSkladowania findMiejsceSkladowaniaById(long id) {
-        return miejsceSkladowaniaRepository.findById(id).get();
-    }
-
-
-//    @Transactional
-//    public void deleteMiejsceSkladowaniaByCoordinatesAndLevelAndHala(int xCoordinate, int yCoordinate, int level) {
-//        miejsceSkladowaniaRepository.deleteByXAndYAndLevelAndHala(xCoordinate, yCoordinate, level);
-//    }
-
-//    @Transactional
-//    public void modifyMiejsceSkladowaniaXCoordinate(int value, boolean isAdding, int newValue) {
-//        if (isAdding) {
-//            miejsceSkladowaniaRepository.addValueToX(value);
-//        } else if (newValue != 0) {
-//            miejsceSkladowaniaRepository.updateValueOfX(newValue);
-//        }
-//        else {
-//            removeValueFromXCoordinate();
-//        }
-
-
-    //Metody usuwania
-//    private void removeValueFromXCoordinate() {
-//        miejsceSkladowaniaRepository.removeValueFromX();
-//    }
 
 }
 
