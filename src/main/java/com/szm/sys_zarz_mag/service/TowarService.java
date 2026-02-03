@@ -1,8 +1,5 @@
 package com.szm.sys_zarz_mag.service;
 
-import com.szm.sys_zarz_mag.model.Jednostka;
-import com.szm.sys_zarz_mag.model.MiejsceSkladowania;
-import com.szm.sys_zarz_mag.model.RodzajSkladowania;
 import com.szm.sys_zarz_mag.model.Towar;
 import com.szm.sys_zarz_mag.repository.TowarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +23,6 @@ public class TowarService {
     }
 
 
-
     //Dodanie nazwy towaru
     public void dodajNazweTowaru(long towarId, String nazwa) {
         towarRepository.addNazwaTowaru(towarId, nazwa);
@@ -45,18 +41,6 @@ public class TowarService {
     }
 
 
-    //Metoda dodająca rodzaj składowania towaru
-    public void dodajRodzajSkladowania(long towarId, RodzajSkladowania rodzajSkladowania) {
-        towarRepository.addRodzajSkladowania(towarId, rodzajSkladowania);
-    }
-
-
-    //Metoda dodająca jednostkę towaru
-    public void dodajJednostke(long towarId, Jednostka jednostka) {
-        towarRepository.addJednostka(towarId, jednostka);
-    }
-
-
     //Metoda edycji Nazwy towaru
     public void edytujNazweTowaru(long towarId, String nazwa) {
         towarRepository.editNazwaTowaru(towarId, nazwa);
@@ -72,24 +56,6 @@ public class TowarService {
     //Metoda edycji Daty wysyłki towaru
     public void edytujDateWysylki(long towarId, LocalDate data) {
         towarRepository.editDataWysylki(towarId, data);
-    }
-
-
-    //Metoda edycji Rodzaju Składowania towaru
-    public void edytujRodzajSkladowania(long towarId, RodzajSkladowania rodzajSkladowania) {
-        towarRepository.editRodzajSkladowania(towarId, rodzajSkladowania);
-    }
-
-
-    //Metoda edycji Miejsca Składowania towaru
-    public void edytujMiejsceSkladowania(long towarId, MiejsceSkladowania miejsceSkladowania) {
-        towarRepository.editMiejsceSkladowania(towarId, miejsceSkladowania);
-    }
-
-
-    //Metoda edycji Jednostki towaru
-    public void edytujJednostke(long towarId, Jednostka jednostka) {
-        towarRepository.editJednostka(towarId, jednostka);
     }
 
 
@@ -115,12 +81,6 @@ public class TowarService {
     //Metoda zwracająca liczbę towarów na podstawie nazwy
     public int policzTowaryZNazwa(String nazwaTowar) {
         return towarRepository.countByNazwaTowar(nazwaTowar);
-    }
-
-
-    //Metoda dodająca pełne miejsce składowania towaru
-    public void dodajMiejsceSkladowania(long towarId, MiejsceSkladowania miejsceSkladowania) {
-        towarRepository.addMiejsceSkladowania(towarId, miejsceSkladowania);
     }
 
     public List<Towar> addAllTowar(List<Towar> towary) {

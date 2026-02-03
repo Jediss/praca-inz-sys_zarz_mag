@@ -16,10 +16,6 @@ public class MiejsceSkladowaniaController {
         this.miejsceSkladowaniaService = miejsceSkladowaniaService;
     }
 
-    @PostMapping("/saveMiejsceSkladowania")
-    public MiejsceSkladowania saveMiejsceSkladowania(@RequestBody MiejsceSkladowania miejsceSkladowania) {
-        return miejsceSkladowaniaService.saveMiejsceSkladowania(miejsceSkladowania);
-    }
 
     @DeleteMapping("/deleteById/{id}")
     public void deleteMiejsceSkladowaniaById(@PathVariable("id") long id) {
@@ -31,10 +27,6 @@ public class MiejsceSkladowaniaController {
         return miejsceSkladowaniaService.updateMiejsceSkladowania(id, miejsceSkladowania);
     }
 
-    @GetMapping("/findById/{id}")
-    public MiejsceSkladowania findMiejsceSkladowaniaById(@PathVariable("id") long id) {
-        return miejsceSkladowaniaService.findMiejsceSkladowaniaById(id);
-    }
 
 //    @GetMapping("/byHala/{isHala}")
 //    public List<MiejsceSkladowania> findMiejsceSkladowaniaByHala(@PathVariable("isHala") boolean isHala) {

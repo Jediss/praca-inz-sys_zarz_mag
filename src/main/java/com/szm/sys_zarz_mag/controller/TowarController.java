@@ -1,9 +1,6 @@
 package com.szm.sys_zarz_mag.controller;
 
 import com.szm.sys_zarz_mag.service.TowarService;
-import com.szm.sys_zarz_mag.model.Jednostka;
-import com.szm.sys_zarz_mag.model.MiejsceSkladowania;
-import com.szm.sys_zarz_mag.model.RodzajSkladowania;
 import com.szm.sys_zarz_mag.model.Towar;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -44,16 +41,6 @@ public class TowarController {
         towarService.dodajDateWysylki(towarId, data);
     }
 
-    @PostMapping("/dodajRodzajSkladowania")
-    public void dodajRodzajSkladowania(@RequestParam long towarId, @RequestBody RodzajSkladowania rodzajSkladowania) {
-        towarService.dodajRodzajSkladowania(towarId, rodzajSkladowania);
-    }
-
-    @PostMapping("/dodajJednostke")
-    public void dodajJednostke(@RequestParam long towarId, @RequestBody Jednostka jednostka) {
-        towarService.dodajJednostke(towarId, jednostka);
-    }
-
 
     @PutMapping("/edytujNazwe")
     public void edytujNazweTowaru(@RequestParam long towarId, @RequestParam String nazwa) {
@@ -68,21 +55,6 @@ public class TowarController {
     @PutMapping("/edytujDateWysylki")
     public void edytujDateWysylki(@RequestParam long towarId, @RequestParam LocalDate data) {
         towarService.edytujDateWysylki(towarId, data);
-    }
-
-    @PutMapping("/edytujRodzajSkladowania")
-    public void edytujRodzajSkladowania(@RequestParam long towarId, @RequestBody RodzajSkladowania rodzajSkladowania) {
-        towarService.edytujRodzajSkladowania(towarId, rodzajSkladowania);
-    }
-
-    @PutMapping("/edytujMiejsceSkladowania")
-    public void edytujMiejsceSkladowania(@RequestParam long towarId, @RequestBody MiejsceSkladowania miejsceSkladowania) {
-        towarService.edytujMiejsceSkladowania(towarId, miejsceSkladowania);
-    }
-
-    @PutMapping("/edytujJednostke")
-    public void edytujJednostke(@RequestParam long towarId, @RequestBody Jednostka jednostka) {
-        towarService.edytujJednostke(towarId, jednostka);
     }
 
     @DeleteMapping("/usun/{towarId}")
@@ -110,11 +82,5 @@ public class TowarController {
     @GetMapping("/policzPoNazwie/{nazwaTowar}")
     public int policzTowaryZNazwa(@PathVariable("nazwaTowar") String nazwaTowar) {
         return towarService.policzTowaryZNazwa(nazwaTowar);
-    }
-
-
-    @PostMapping("/dodajPelneMiejsceSkladowania")
-    public void dodajMiejsceSkladowania(@RequestParam long towarId, @RequestBody MiejsceSkladowania miejsceSkladowania) {
-        towarService.dodajMiejsceSkladowania(towarId, miejsceSkladowania);
     }
 }

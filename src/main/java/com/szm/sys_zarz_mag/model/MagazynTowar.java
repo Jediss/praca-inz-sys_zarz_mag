@@ -26,6 +26,18 @@ public class MagazynTowar {
     @JoinColumn(name = "idMagazyn")
     private Magazyn magazyn;
 
+    @ManyToOne
+    @JoinColumn(name = "idMiejsceSkladowania")
+    private MiejsceSkladowania miejsceSkladowania;
+
+    @ManyToOne
+    @JoinColumn(name = "idRodzajSkladowania")
+    private RodzajSkladowania rodzajSkladowania;
+
+    @ManyToOne
+    @JoinColumn(name = "idJednostka")
+    private Jednostka jednostka;
+
     @Column(nullable = false)
     private double iloscTowar;
 

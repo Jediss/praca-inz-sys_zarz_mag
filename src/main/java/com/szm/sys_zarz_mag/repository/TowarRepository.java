@@ -1,14 +1,11 @@
 package com.szm.sys_zarz_mag.repository;
 
-import com.szm.sys_zarz_mag.model.Jednostka;
-import com.szm.sys_zarz_mag.model.RodzajSkladowania;
 import com.szm.sys_zarz_mag.model.Towar;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import com.szm.sys_zarz_mag.model.MiejsceSkladowania;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -47,42 +44,6 @@ public interface TowarRepository extends JpaRepository<Towar, Long> {
     @Modifying
     @Query("UPDATE Towar t SET t.dataWysylki = :data WHERE t.idTowar = :towarId")
     void addDataWysylki(@Param("towarId") long towarId, @Param("data") LocalDate data);
-
-
-    //Dodanie pełnego miejsca składowania towaru
-    @Modifying
-    @Query("UPDATE Towar t SET t.miejsceSkladowania = :miejsceSkladowania WHERE t.idTowar = :towarId")
-    void addMiejsceSkladowania(@Param("towarId") long towarId, @Param("miejsceSkladowania") MiejsceSkladowania miejsceSkladowania);
-
-
-    //Dodanie rodzaju składowania towaru
-    @Modifying
-    @Query("UPDATE Towar t SET t.rodzajSkladowania = :rodzajSkladowania WHERE t.idTowar = :towarId")
-    void addRodzajSkladowania(@Param("towarId") long towarId, @Param("rodzajSkladowania") RodzajSkladowania rodzajSkladowania);
-
-
-    //Dodanie jednostki towaru
-    @Modifying
-    @Query("UPDATE Towar t SET t.jednostka = :jednostka WHERE t.idTowar = :towarId")
-    void addJednostka(@Param("towarId") long towarId, @Param("jednostka") Jednostka jednostka);
-
-
-    //Edycja Miejsca Składowania towaru
-    @Modifying
-    @Query("UPDATE Towar t SET t.miejsceSkladowania = :miejsceSkladowania WHERE t.idTowar = :towarId")
-    void editMiejsceSkladowania(@Param("towarId") long towarId, @Param("miejsceSkladowania") MiejsceSkladowania miejsceSkladowania);
-
-
-    //Edycja Jednostki towaru
-    @Modifying
-    @Query("UPDATE Towar t SET t.jednostka = :jednostka WHERE t.idTowar = :towarId")
-    void editJednostka(@Param("towarId") long towarId, @Param("jednostka") Jednostka jednostka);
-
-
-    //Edycja Rodzaju Składowania towaru
-    @Modifying
-    @Query("UPDATE Towar t SET t.rodzajSkladowania = :rodzajSkladowania WHERE t.idTowar = :towarId")
-    void editRodzajSkladowania(@Param("towarId") long towarId, @Param("rodzajSkladowania") RodzajSkladowania rodzajSkladowania);
 
 
     //Edycja nazwy towaru
