@@ -1,6 +1,6 @@
 package com.szm.sys_zarz_mag.RefreshToken;
 
-import com.szm.sys_zarz_mag.model.Pracownik;
+import com.szm.sys_zarz_mag.Entity.Pracownik;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

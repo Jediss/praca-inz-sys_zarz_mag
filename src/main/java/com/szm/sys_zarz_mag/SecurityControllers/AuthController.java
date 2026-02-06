@@ -25,8 +25,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.szm.sys_zarz_mag.model.Pracownik;
-import com.szm.sys_zarz_mag.repository.PracownikRepository;
+import com.szm.sys_zarz_mag.Entity.Pracownik;
+import com.szm.sys_zarz_mag.Repository.PracownikRepository;
 import com.szm.sys_zarz_mag.Roles.Role;
 import com.szm.sys_zarz_mag.Roles.RoleRepository;
 import com.szm.sys_zarz_mag.Roles.ERole;

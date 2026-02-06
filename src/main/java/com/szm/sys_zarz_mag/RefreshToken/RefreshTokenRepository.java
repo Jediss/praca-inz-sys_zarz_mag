@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Repository;
 
-import com.szm.sys_zarz_mag.model.Pracownik;
+import com.szm.sys_zarz_mag.Entity.Pracownik;
 
 @Repository
 public interface RefreshTokenRepository extends JpaRepository<RefreshToken, Long>{

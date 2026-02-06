@@ -10,7 +10,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.szm.sys_zarz_mag.model.Pracownik;
+import com.szm.sys_zarz_mag.Entity.Pracownik;
 
 
 public class UserDetailsImpl implements UserDetails {

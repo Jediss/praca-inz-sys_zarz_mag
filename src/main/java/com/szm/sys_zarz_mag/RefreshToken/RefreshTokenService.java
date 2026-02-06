@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.szm.sys_zarz_mag.repository.PracownikRepository;
-import com.szm.sys_zarz_mag.model.Pracownik;
+import com.szm.sys_zarz_mag.Repository.PracownikRepository;
+import com.szm.sys_zarz_mag.Entity.Pracownik;
 
 @Service
 public class RefreshTokenService {
